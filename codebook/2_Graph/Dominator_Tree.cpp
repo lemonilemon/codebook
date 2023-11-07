@@ -1,3 +1,4 @@
+#include "common.h"
 struct dominator_tree { // 1-base
   vector<int> G[N], rG[N];
   int n, pa[N], dfn[N], id[N], Time;
@@ -9,7 +10,7 @@ struct dominator_tree { // 1-base
       G[i].clear(), rG[i].clear();
   }
   void add_edge(int u, int v) {
-    G[u].pb(v), rG[v].pb(u);
+    G[u].emplace_back(v), rG[v].emplace_back(u);
   }
   void dfs(int u) {
     id[dfn[u] = ++Time] = u;
@@ -38,7 +39,7 @@ struct dominator_tree { // 1-base
           find(v, i);
           semi[i] = min(semi[i], semi[best[v]]);
         }
-      tree[semi[i]].pb(i);
+      tree[semi[i]].emplace_back(i);
       for (auto v : tree[pa[i]]) {
         find(v, pa[i]);
         idom[v] =
@@ -48,7 +49,7 @@ struct dominator_tree { // 1-base
     }
     for (int i = 2; i <= Time; ++i) {
       if (idom[i] != semi[i]) idom[i] = idom[idom[i]];
-      tree[id[idom[i]]].pb(id[i]);
+      tree[id[idom[i]]].emplace_back(id[i]);
     }
   }
 };

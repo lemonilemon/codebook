@@ -1,3 +1,4 @@
+#include "common.h"
 ll road[N][N]; // input here
 struct MinimumMeanCycle {
   ll dp[N + 5][N], n;

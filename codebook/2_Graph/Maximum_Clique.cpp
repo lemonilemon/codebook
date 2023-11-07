@@ -1,7 +1,9 @@
+#include "common.h"
+#undef N
 struct Maximum_Clique {
-  typedef bitset<MAXN> bst;
-  bst N[MAXN], empty;
-  int p[MAXN], n, ans;
+  typedef bitset<M> bst;
+  bst N[M], empty; // <- beware this N
+  int p[M], n, ans;
   void BronKerbosch2(bst R, bst P, bst X) {
     if (P == empty && X == empty)
       return ans = max(ans, (int)R.count()), void();

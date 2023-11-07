@@ -10,6 +10,7 @@
 #define all(x) x.begin(), x.end()
 using namespace std;
 
-// defined macro for N, M
+// defined macro for N, M, INF
 #define N 1'000'000
 #define M 1'000'000
+#define INF 1'000'000'000'000'000'000

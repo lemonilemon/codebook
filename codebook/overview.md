@@ -12,7 +12,8 @@
 |MinimumMeanCycle ||[2_Graph/MinimumMeanCycle.cpp](2_Graph/MinimumMeanCycle.cpp)|true        |8BQube   ||
 |MaximumCliqueDyn ||[2_Graph/Maximum_Clique_Dyn.cpp](2_Graph/Maximum_Clique_Dyn.cpp)|true        |8BQube   ||
 |MinimumSteinerTree ||[2_Graph/MinimumSteinerTree.cpp](2_Graph/MinimumSteinerTree.cpp)|true        |8BQube   ||
-|DMST ||[2_Graph/DMST.cpp](2_Graph/DMST.cpp)|true        |8BQube and kactl   ||
+|DMST(slow) ||[2_Graph/Minimum_Arborescence.cpp](2_Graph/Minimum_Arborescence.cpp)|true        |8BQube   ||
+|DMST ||[2_Graph/DMST.cpp](2_Graph/DMST.cpp)|true        |kactl   ||
 |VizingTheorem ||[2_Graph/Vizing.cpp](2_Graph/Vizing.cpp)|true        |LittleCube   ||
 |MinimumCliqueCover ||[2_Graph/Minimum_Clique_Cover.cpp](2_Graph/Minimum_Clique_Cover.cpp)|true        |8BQube   ||
 |CountMaximalClique ||[2_Graph/NumberofMaximalClique.cpp](2_Graph/NumberofMaximalClique.cpp)|true        |8BQube   ||
@@ -98,6 +99,7 @@
 |RotatingSweepLine ||[8_Geometry/rotatingSweepLine.cpp](8_Geometry/rotatingSweepLine.cpp)|true        |8BQube   ||
 |DelaunayTriangulation ||[8_Geometry/DelaunayTriangulation.cpp](8_Geometry/DelaunayTriangulation.cpp)|true        |8BQube   ||
 |VonoroiDiagram ||[8_Geometry/Triangulation_Vonoroi.cpp](8_Geometry/Triangulation_Vonoroi.cpp)|true        |8BQube   ||
+|3DConeDistance ||[8_Geometry/3DConeDist.cpp](8_Geometry/3DConeDist.cpp)|true        |LittleCube   ||
 ## Misc
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |

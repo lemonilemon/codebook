@@ -10,7 +10,8 @@
 + MinimumMeanCycle,   	None,   2_Graph/MinimumMeanCycle.cpp, 		MinimumMeanCycle, 	true,	8BQube,
 + MaximumCliqueDyn,		None,   2_Graph/Maximum_Clique_Dyn.cpp,		Maximum_Clique_Dyn,	true,	8BQube,
 + MinimumSteinerTree,	None,   2_Graph/MinimumSteinerTree.cpp, 	MinimumSteinerTree, true,	8BQube,
-+ DMST,   				None,   2_Graph/DMST.cpp, 					DMST, 				true,	8BQube and kactl,
++ DMST(slow),			None,   2_Graph/Minimum_Arborescence.cpp,	DMST, 				true,	8BQube,
++ DMST,   				None,   2_Graph/DMST.cpp, 					DMST, 				true,	kactl,
 + VizingTheorem,		None,   2_Graph/Vizing.cpp, 				Vizing, 			true,	LittleCube,
 + MinimumCliqueCover,	None,	2_Graph/Minimum_Clique_Cover.cpp,	MinimumCliqueCover,	true,	8BQube,
 + CountMaximalClique,	None,	2_Graph/NumberofMaximalClique.cpp,	#MaximalClique,		true,	8BQube,
@@ -105,8 +106,8 @@
 + DelaunayTriangulation,None,	8_Geometry/DelaunayTriangulation.cpp,	,			true,	8BQube,
 + VonoroiDiagram,		None,	8_Geometry/Triangulation_Vonoroi.cpp,	,			true,	8BQube,
 + 3DBasic,				None,	8_Geometry/3Dpoint.cpp,					,			false,	8BQube,
-+ 3DConvexHull,			None,	8_Geometry/8_Geometry/Convexhull3D.cpp, ,			false,	8BQube,
-+ 3DConeDistance,		None,	8_Geometry/8_Geometry/3DConeDist.cpp,	,			true,	LittleCube,
++ 3DConvexHull,			None,	8_Geometry/Convexhull3D.cpp,            ,			false,	8BQube,
++ 3DConeDistance,		None,	8_Geometry/3DConeDist.cpp,	            ,  			true,	LittleCube,
 
 - Misc
 + MoAlgoWithModify,		None,	9_Else/Mos_Algorithm_With_modification.cpp,		$O(N^{5/3})$,	true,	8BQube,

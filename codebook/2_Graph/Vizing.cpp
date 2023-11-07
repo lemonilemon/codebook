@@ -1,13 +1,14 @@
+#include "common.h"
 namespace Vizing { // Edge coloring
                    // G: coloring adjM
-int C[maxN][maxN], G[maxN][maxN];
-void clear(int N) {
-  for (int i = 0; i <= N; i++) {
-    for (int j = 0; j <= N; j++) C[i][j] = G[i][j] = 0;
+int C[N][N], G[N][N];
+void clear(int n) {
+  for (int i = 0; i <= n; i++) {
+    for (int j = 0; j <= n; j++) C[i][j] = G[i][j] = 0;
   }
 }
-void solve(vector<pii> &E, int N, int M) {
-  int X[MAXN] = {}, a;
+void solve(vector<pii> &E, int n, int m) {
+  int X[n] = {}, a;
   auto update = [&](int u) {
     for (X[u] = 1; C[u][X[u]]; X[u]++);
   };
@@ -29,12 +30,12 @@ void solve(vector<pii> &E, int N, int M) {
     if (!C[u][c2]) X[u] = c2;
     return p;
   };
-  for (int i = 1; i <= N; i++) X[i] = 1;
+  for (int i = 1; i <= n; i++) X[i] = 1;
   for (int t = 0; t < E.size(); t++) {
     int u = E[t].first, v0 = E[t].second, v = v0,
         c0 = X[u], c = c0, d;
     vector<pii> L;
-    int vst[MAXN] = {};
+    int vst[n] = {};
     while (!G[u][v0]) {
       L.emplace_back(v, d = X[v]);
       if (!C[v][c])
