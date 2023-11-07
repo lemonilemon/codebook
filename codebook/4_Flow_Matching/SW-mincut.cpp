@@ -1,3 +1,5 @@
+#include "common.h"
+#undef INF
 struct SW{ // global min cut, O(V^3)
   #define REP for (int i = 0; i < n; ++i)
   static const int MXN = 514, INF = 2147483647;

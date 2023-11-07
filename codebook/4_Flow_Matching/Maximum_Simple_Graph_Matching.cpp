@@ -1,3 +1,4 @@
+#include "common.h"
 struct Matching { // 0-base
   queue<int> q; int n;
   vector<int> fa, s, vis, pre, match;
@@ -20,7 +21,7 @@ struct Matching { // 0-base
     }
   }
   bool Bfs(int r) {
-    iota(ALL(fa), 0); fill(ALL(s), -1);
+    iota(all(fa), 0); fill(all(s), -1);
     q = queue<int>(); q.push(r); s[r] = 0;
     for (; !q.empty(); q.pop()) {
       for (int x = q.front(); int u : G[x])
@@ -41,7 +42,7 @@ struct Matching { // 0-base
   }
   Matching(int _n) : n(_n), fa(n + 1), s(n + 1), vis(n + 1), pre(n + 1, n), match(n + 1, n), G(n) {}
   void add_edge(int u, int v) 
-  { G[u].pb(v), G[v].pb(u); }
+  { G[u].emplace_back(v), G[v].emplace_back(u); }
   int solve() {
     int ans = 0;
     for (int x = 0; x < n; ++x)

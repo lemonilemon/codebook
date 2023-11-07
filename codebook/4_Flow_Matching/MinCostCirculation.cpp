@@ -1,3 +1,4 @@
+#include "common.h"
 struct MinCostCirculation { // 0-base
   struct Edge {
     ll from, to, cap, fcap, flow, cost, rev; 
@@ -49,7 +50,7 @@ struct MinCostCirculation { // 0-base
     for (int i = 0; i < n; ++i) G[i].clear();
   }
   void add_edge(ll a, ll b, ll cap, ll cost) {
-    G[a].pb(Edge{a, b, 0, cap, 0, cost, SZ(G[b]) + (a == b)});
-    G[b].pb(Edge{b, a, 0, 0, 0, -cost, SZ(G[a]) - 1});
+    G[a].emplace_back(Edge{a, b, 0, cap, 0, cost, (ll)G[b].size() + (a == b)});
+    G[b].emplace_back(Edge{b, a, 0, 0, 0, -cost, (ll)G[a].size() - 1});
   }
 } mcmf; // O(VE * ElogC)

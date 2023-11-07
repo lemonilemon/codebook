@@ -1,3 +1,4 @@
+#include "common.h"
 struct BoundedFlow { // 0-base
   struct edge {
     int to, cap, flow, rev;
@@ -11,16 +12,16 @@ struct BoundedFlow { // 0-base
   }
   void add_edge(int u, int v, int lcap, int rcap) {
     cnt[u] -= lcap, cnt[v] += lcap;
-    G[u].pb(edge{v, rcap, lcap, SZ(G[v])});
-    G[v].pb(edge{u, 0, 0, SZ(G[u]) - 1});
+    G[u].emplace_back(edge{v, rcap, lcap, (int)G[v].size()});
+    G[v].emplace_back(edge{u, 0, 0, (int)G[u].size() - 1});
   }
   void add_edge(int u, int v, int cap) {
-    G[u].pb(edge{v, cap, 0, SZ(G[v])});
-    G[v].pb(edge{u, 0, 0, SZ(G[u]) - 1});
+    G[u].emplace_back(edge{v, cap, 0, (int)G[v].size()});
+    G[v].emplace_back(edge{u, 0, 0, (int)G[u].size() - 1});
   }
   int dfs(int u, int cap) {
     if (u == t || !cap) return cap;
-    for (int &i = cur[u]; i < SZ(G[u]); ++i) {
+    for (int &i = cur[u]; i < G[u].size(); ++i) {
       edge &e = G[u][i];
       if (dis[e.to] == dis[u] + 1 && e.cap != e.flow) {
         int df = dfs(e.to, min(e.cap - e.flow, cap));
