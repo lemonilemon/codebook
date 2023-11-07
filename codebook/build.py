@@ -28,8 +28,8 @@ with open("content-script") as script:
             md.write("|{0} |{1}|{2}|{3}        |{4}   |{5}|\n".format(args[0], 
                                                                     '' if args[1] == 'None' else "[{0}]({0})".format(args[1]),
                                                                     '' if args[2] == 'None' else "[{0}]({0})".format(args[2]),
+                                                                    args[3],
                                                                     args[4],
-                                                                    args[5],
                                                                     args[6]))
             
 

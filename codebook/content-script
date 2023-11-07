@@ -60,20 +60,22 @@
 + PollardRho,			None,			6_Math/Pollard_Rho.cpp,				PollardRho,						true,	8BQube,
 + BigNumber,			None,			6_Math/Big_number.cpp,				BigNumber,						false,	8BQube,
 + Fraction,				None,			6_Math/Fraction.cpp,				Fraction,						true,	8BQube,
-+ Simplex,				6_Math/SimplexConstruction.tex,	6_Math/Simplex.cpp,	Simplex Method,					true,	8BQube & LittleCube,
-+ GuassianElimination,	None,			6_Math/Simultaneous_Equations.cpp,	Guassian Elimination,			true,	8BQube,
 + SchreierSims,			None,			6_Math/SchreierSims.cpp,			WTF,							false,	8BQube,
 + ChineseRemainder,		None,			6_Math/chineseRemainder.cpp,		ChineseRemainder,				true, 	8BQube,
 + FactorialMod$p^k$,	None,			6_Math/fac_no_p.cpp,				See Luogu P4720,				true,	8BQube,
 + QuadraticResidue,		None,			6_Math/QuadraticResidue.cpp,		QuadraticResidue $O(\log^2 p)$,	true,	LittleCube,	Lib-Checker Sqrt Mod
 + MeisselLehmer,		None,			6_Math/PiCount.cpp,					Count Prime Number,				true,	8BQube,
 + DiscreteLog,			None,			6_Math/DiscreteLog.cpp,				Discrete Logarithm,				true,	8BQube,
-+ BerlekampMassey,		None,			6_Math/Berlekamp-Massey.cpp,		Find Linear Recursion,			true,	8BQube,
 + Theorems,				6_Math/Theorem.tex,				None,				Number Theorems,				true,	8BQube,
 + Estimation,			6_Math/Estimation.tex,			None,				Estimations,					true,	8BQube,
 + EuclideanAlgorithms,	6_Math/Euclidean.tex,			None,				Euclidean,						true,	8BQube,
 + Numbers,				6_Math/numbers.tex,				None,				Some Numbers,					true,	8BQube,
-+ GenerationFunctions,	6_Math/Generating_function.tex,	None,				GF Tips,						true, 	8BQube,
++ GeneratingFunctions,	6_Math/Generating_function.tex,	None,				GF Tips,						true, 	8BQube,
+
+- Linear Algebra
++ GuassianElimination,	None,			6_Math/Simultaneous_Equations.cpp,	Guassian Elimination,			true,	8BQube,
++ BerlekampMassey,		None,			6_Math/Berlekamp-Massey.cpp,		Find Linear Recursion,			true,	8BQube,
++ Simplex,				6_Math/SimplexConstruction.tex,	6_Math/Simplex.cpp,	Simplex Method,					true,	8BQube & LittleCube,
 
 - Polynomials
 + NTT (FFT),			None,	7_Polynomial/NTT.cpp,					NTT (FFT),	true,	LittleCube,
