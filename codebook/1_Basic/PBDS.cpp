@@ -1,3 +1,4 @@
+#include "common.h"
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
 

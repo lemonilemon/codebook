@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
+#include "common.h"
 struct custom_hash
 {
     static uint64_t splitmix64(uint64_t x)
