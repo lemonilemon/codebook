@@ -1,3 +1,4 @@
+#include "common.h"
 struct Splay { // xor-sum
   static Splay nil;
   Splay *ch[2], *f;
@@ -42,10 +43,10 @@ void rotate(Splay *x) {
 void splay(Splay *x) {
   vector<Splay*> splayVec;
   for (Splay *q = x;; q = q->f) {
-    splayVec.pb(q);
+    splayVec.emplace_back(q);
     if (q->isr()) break;
   }
-  reverse(ALL(splayVec));
+  reverse(all(splayVec));
   for (auto it : splayVec) it->push();
   while (!x->isr()) {
     if (x->f->isr()) rotate(x);
