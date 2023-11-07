@@ -1,38 +1,31 @@
-int Jacobi(int a, int m) {
-  int s = 1;
-  for (; m > 1; ) {
-    a %= m;
-    if (a == 0) return 0;
-    const int r = __builtin_ctz(a);
-    if ((r & 1) && ((m + 2) & 4)) s = -s;
-    a >>= r;
-    if (a & m & 2) s = -s;
-    swap(a, m);
+// Berlekamp-Rabin
+
+ll trial(ll y, ll z, ll m) {
+  ll a0 = 1, a1 = 0, b0 = z, b1 = 1, p = (m - 1) / 2;
+  while (p) {
+    if (p & 1)
+      tie(a0, a1) =
+        make_pair((a1 * b1 % m * y + a0 * b0) % m,
+          (a0 * b1 + a1 * b0) % m);
+    tie(b0, b1) =
+      make_pair((b1 * b1 % m * y + b0 * b0) % m,
+        (2 * b0 * b1) % m);
+    p >>= 1;
   }
-  return s;
+  if (a1) return inv(a1, m);
+  return -1;
 }
 
-int QuadraticResidue(int a, int p) {
-  if (p == 2) return a & 1;
-  const int jc = Jacobi(a, p);
-  if (jc == 0) return 0;
-  if (jc == -1) return -1;
-  int b, d;
-  for (; ; ) {
-    b = rand() % p;
-    d = (1LL * b * b + p - a) % p;
-    if (Jacobi(d, p) == -1) break;
+mt19937 rd(49);
+
+ll psqrt(ll y, ll p) {
+  if (fpow(y, (p - 1) / 2, p) != 1) return -1;
+  for (int i = 0; i < 30; i++) {
+    ll z = rd() % p;
+    if (z * z % p == y) return z;
+    ll x = trial(y, z, p);
+    if (x == -1) continue;
+    return x;
   }
-  int f0 = b, f1 = 1, g0 = 1, g1 = 0, tmp;
-  for (int e = (1LL + p) >> 1; e; e >>= 1) {
-    if (e & 1) {
-      tmp = (1LL * g0 * f0 + 1LL * d * (1LL * g1 * f1 % p)) % p;
-      g1 = (1LL * g0 * f1 + 1LL * g1 * f0) % p;
-      g0 = tmp;
-    }
-    tmp = (1LL * f0 * f0 + 1LL * d * (1LL * f1 * f1 % p)) % p;
-    f1 = (2LL * f0 * f1) % p;
-    f0 = tmp;
-  }
-  return g0;
+  return -1;
 }

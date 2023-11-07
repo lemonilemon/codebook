@@ -1,13 +1,15 @@
-string mcp(string s) {
-  int n = SZ(s), i = 0, j = 1;
-  s += s;
-  while (i < n && j < n) {
-    int k = 0;
-    while (k < n && s[i + k] == s[j + k]) ++k;
-    if (s[i + k] <= s[j + k]) j += k + 1;
-    else i += k + 1;
-    if (i == j) ++j;
+int mincyc(string s) {
+  int n = s.size();
+  s = s + s;
+  int i = 0, ans = 0;
+  while (i < n) {
+    ans = i;
+    int j = i + 1, k = i;
+    while (j < s.size() && s[j] >= s[k]) {
+      k = (s[j] > s[k] ? i : k + 1);
+      ++j;
+    }
+    while (i <= k) i += j - k;
   }
-  int ans = i < n ? i : j;
-  return s.substr(ans, n);
+  return ans;
 }

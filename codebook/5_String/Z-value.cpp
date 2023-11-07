@@ -1,11 +1,11 @@
-int z[MAXn];
-void make_z(const string &s) {
-  int l = 0, r = 0;
-  for (int i = 1; i < SZ(s); ++i) {
-    for (z[i] = max(0, min(r - i + 1, z[i - l]));
-         i + z[i] < SZ(s) && s[i + z[i]] == s[z[i]];
-         ++z[i])
-      ;
-    if (i + z[i] - 1 > r) l = i, r = i + z[i] - 1;
+int Z[1000006];
+void z(string s) {
+  for (int i = 1, mx = 0; i < s.size(); i++) {
+    if (i < Z[mx] + mx)
+      Z[i] = min(Z[mx] - i + mx, Z[i - mx]);
+    while (
+      Z[i] + i < s.size() && s[i + Z[i]] == s[Z[i]])
+      Z[i]++;
+    if (Z[i] + i > Z[mx] + mx) mx = i;
   }
 }

@@ -1,46 +1,30 @@
-vector<int> G[N]; // 1-base
-vector<int> nG[N * 2], bcc[N];
-int low[N], dfn[N], Time, st[N], top;
-int bcc_id[N], bcc_cnt; // 1-base
-bool is_cut[N]; // whether is av
-bool cir[N * 2];
-void dfs(int u, int pa = -1) {
-  int child = 0;
-  low[u] = dfn[u] = ++Time;
-  st[top++] = u;
-  for (int v : G[u])
-    if (!dfn[v]) {
-      dfs(v, u), ++child;
-      low[u] = min(low[u], low[v]);
-      if (dfn[u] <= low[v]) {
-        is_cut[u] = 1;
-        bcc[++bcc_cnt].clear();
-        int t;
-        do {
-          bcc_id[t = st[--top]] = bcc_cnt;
-          bcc[bcc_cnt].push_back(t);
-        } while (t != v);
-        bcc_id[u] = bcc_cnt;
-        bcc[bcc_cnt].pb(u);
+int n, m, dfn[N], low[N], is_cut[N], nbcc = 0, t = 0;
+vector<int> g[N], bcc[N], G[2 * N];
+stack<int> st;
+void tarjan(int p, int lp) {
+  dfn[p] = low[p] = ++t;
+  st.push(p);
+  for (auto i : g[p]) {
+    if (!dfn[i]) {
+      tarjan(i, p);
+      low[p] = min(low[p], low[i]);
+      if (dfn[p] <= low[i]) {
+        nbcc++;
+        is_cut[p] = 1;
+        for (int x = 0; x != i; st.pop()) {
+          x = st.top();
+          bcc[nbcc].push_back(x);
+        }
+        bcc[nbcc].push_back(p);
       }
-    } else if (dfn[v] < dfn[u] && v != pa)
-      low[u] = min(low[u], dfn[v]);
-  if (pa == -1 && child < 2) is_cut[u] = 0;
+    } else low[p] = min(low[p], dfn[i]);
+  }
 }
-void bcc_init(int n) { // TODO: init {nG, cir}[1..2n]
-  Time = bcc_cnt = top = 0;
-  for (int i = 1; i <= n; ++i)
-    G[i].clear(), dfn[i] = bcc_id[i] = is_cut[i] = 0;
-}
-void bcc_solve(int n) {
-  for (int i = 1; i <= n; ++i)
-    if (!dfn[i]) dfs(i);
-  // block-cut tree
-  for (int i = 1; i <= n; ++i)
-    if (is_cut[i])
-      bcc_id[i] = ++bcc_cnt, cir[bcc_cnt] = 1;
-  for (int i = 1; i <= bcc_cnt && !cir[i]; ++i)
-    for (int j : bcc[i])
-      if (is_cut[j])
-        nG[i].pb(bcc_id[j]), nG[bcc_id[j]].pb(i);
+void build() { // [n+1,n+nbcc] cycle, [1,n] vertex
+  for (int i = 1; i <= nbcc; i++) {
+    for (auto j : bcc[i]) {
+      G[i + n].push_back(j);
+      G[j].push_back(i + n);
+    }
+  }
 }
