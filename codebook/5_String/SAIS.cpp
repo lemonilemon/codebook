@@ -1,3 +1,4 @@
+#include "common.h"
 namespace sfx {
 bool _t[N * 2];
 int SA[N * 2], H[N], RA[N];

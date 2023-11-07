@@ -1,6 +1,5 @@
-#define sumS 500005
-#define sigma 26
-#define base 'a'
+#include "common.h"
+
 struct AhoCorasick {
   int ch[sumS][sigma] = {{}}, f[sumS] = {-1},
       tag[sumS], mv[sumS][sigma], jump[sumS],

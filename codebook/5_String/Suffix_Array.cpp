@@ -1,17 +1,18 @@
+#include "common.h"
 vector<int> sa, cnt, rk, tmp, lcp;
 void SA(string s) {
   int n = s.size();
   sa.resize(n), cnt.resize(n), rk.resize(n),
     tmp.resize(n);
-  iota(sa.begin(), sa.end(), 0);
-  sort(sa.begin(), sa.end(),
+  iota(all(sa), 0);
+  sort(all(sa),
     [&](int i, int j) { return s[i] < s[j]; });
   rk[0] = 0;
   for (int i = 1; i < n; i++)
     rk[sa[i]] =
       rk[sa[i - 1]] + (s[sa[i - 1]] != s[sa[i]]);
   for (int k = 1; k <= n; k <<= 1) {
-    fill(cnt.begin(), cnt.end(), 0);
+    fill(all(cnt), 0);
     for (int i = 0; i < n; i++)
       cnt[rk[(sa[i] - k + n) % n]]++;
     for (int i = 1; i < n; i++) cnt[i] += cnt[i - 1];

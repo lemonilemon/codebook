@@ -1,3 +1,4 @@
+#include "common.h"
 int KMP(string s, string t) {
   int n = t.size(), ans = 0;
   vector<int> f(t.size(), 0);

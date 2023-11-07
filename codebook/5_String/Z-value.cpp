@@ -1,3 +1,4 @@
+#include "common.h"
 int Z[1000006];
 void z(string s) {
   for (int i = 1, mx = 0; i < s.size(); i++) {

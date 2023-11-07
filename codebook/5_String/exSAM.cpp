@@ -1,3 +1,5 @@
+#include "common.h"
+#define CNUM 26
 struct exSAM {
   int len[N * 2], link[N * 2]; // maxlength, suflink 
   int next[N * 2][CNUM], tot; // [0, tot), root = 0 
@@ -48,7 +50,7 @@ struct exSAM {
     }
     vector<int> lc(tot);
     for (int i = 1; i < tot; ++i) ++lc[len[i]];
-    partial_sum(ALL(lc), lc.begin());
+    partial_sum(all(lc), lc.begin());
     for (int i = 1; i < tot; ++i) lenSorted[--lc[len[i]]] = i;
   }
   void solve() {

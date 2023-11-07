@@ -1,3 +1,4 @@
+#include "common.h"
 struct palindromic_tree {
   struct node {
     int next[26], fail, len;
@@ -11,12 +12,12 @@ struct palindromic_tree {
   vector<char> s;
   int last, n;
   palindromic_tree() : St(2), last(1), n(0) {
-    St[0].fail = 1, St[1].len = -1, s.pb(-1);
+    St[0].fail = 1, St[1].len = -1, s.emplace_back(-1);
   }
   inline void clear() {
     St.clear(), s.clear(), last = 1, n = 0;
-    St.pb(0), St.pb(-1);
-    St[0].fail = 1, s.pb(-1);
+    St.emplace_back(0), St.emplace_back(-1);
+    St[0].fail = 1, s.emplace_back(-1);
   }
   inline int get_fail(int x) {
     while (s[n - St[x].len - 1] != s[n])
@@ -27,8 +28,8 @@ struct palindromic_tree {
     s.push_back(c -= 'a'), ++n;
     int cur = get_fail(last);
     if (!St[cur].next[c]) {
-      int now = SZ(St);
-      St.pb(St[cur].len + 2);
+      int now = St.size();
+      St.emplace_back(St[cur].len + 2);
       St[now].fail =
         St[get_fail(St[cur].fail)].next[c];
       St[cur].next[c] = now;
@@ -43,6 +44,6 @@ struct palindromic_tree {
     }
   }
   inline int size() { // The number of diff. pal.
-    return SZ(St) - 2;
+    return (int)St.size() - 2;
   }
 };

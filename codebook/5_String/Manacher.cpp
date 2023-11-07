@@ -1,3 +1,4 @@
+#include "common.h"
 int man[2000006];
 int manacher(string s) {
   string t;

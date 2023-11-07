@@ -1,3 +1,4 @@
+#include "common.h"
 int mincyc(string s) {
   int n = s.size();
   s = s + s;
