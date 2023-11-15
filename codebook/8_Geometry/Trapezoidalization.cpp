@@ -31,7 +31,7 @@ struct SweepLine {
     if (its[idx] != sweep.begin()) 
       update_event(*prev(its[idx]));
     update_event(idx);
-    event.emplace(base[idx].Y.X, idx + 2 * SZ(base));
+    event.emplace(base[idx].Y.X, idx + 2 * (int)base.size());
   }
   void erase(int idx) {
     assert(eits[idx] == event.end());
@@ -48,7 +48,7 @@ struct SweepLine {
     if (nxt == sweep.end() || !slope_cmp(idx, *nxt)) return;
     auto t = intersect(base[idx].X, base[idx].Y, base[*nxt].X, base[*nxt].Y).X;
     if (t + eps < curTime || t >= min(base[idx].Y.X, base[*nxt].Y.X)) return;
-    eits[idx] = event.emplace(t, idx + SZ(base));
+    eits[idx] = event.emplace(t, idx + (int)base.size());
   }
   void swp(int idx) {
     assert(eits[idx] != event.end());
@@ -61,8 +61,8 @@ struct SweepLine {
     update_event(idx);
   }
   // only expected to call the functions below
-  SweepLine(T t, T e, vector<Line> vec): _cmp(*this), curTime(t), eps(e), curQ(), base(vec), sweep(_cmp), event(), its(SZ(vec), sweep.end()), eits(SZ(vec), event.end()) {
-    for (int i = 0; i < SZ(base); ++i) {
+  SweepLine(T t, T e, vector<Line> vec): _cmp(*this), curTime(t), eps(e), curQ(), base(vec), sweep(_cmp), event(), its((int)vec.size(), sweep.end()), eits((int)vec.size(), event.end()) {
+    for (int i = 0; i < (int)base.size(); ++i) {
       auto &[p, q] = base[i];
       if (p > q) swap(p, q);
       if (p.X <= curTime && curTime <= q.X)
@@ -75,8 +75,8 @@ struct SweepLine {
     assert(t >= curTime);
     while (!event.empty() && event.begin()->X <= t) {
       auto [et, idx] = *event.begin();
-      int s = idx / SZ(base);
-      idx %= SZ(base);
+      int s = idx / (int)base.size();
+      idx %= (int)base.size();
       if (abs(et - t) <= eps && s == 2 && !ers) break;
       curTime = et;
       event.erase(event.begin());

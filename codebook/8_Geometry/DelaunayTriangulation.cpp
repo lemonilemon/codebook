@@ -1,3 +1,4 @@
+#include "Default_code.cpp"
 /* Delaunay Triangulation:
 Given a sets of points on 2D plane, find a
 triangulation such that no points will strictly
@@ -102,7 +103,7 @@ void go(Tri* now) { // store all tri into triang
     return;
   vst.insert(now);
   if (!now->has_chd())
-    return triang.pb(now);
+    return triang.emplace_back(now);
   for (int i = 0; i < now->num_chd(); ++i)
     go(now->chd[i]);
 }

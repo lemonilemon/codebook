@@ -1,5 +1,6 @@
+#include "Default_code.cpp"
 int TangentDir(vector<pll> &C, pll dir) {
-  return cyc_tsearch(SZ(C), [&](int a, int b) {
+  return cyc_tsearch((int)C.size(), [&](int a, int b) {
     return cross(dir, C[a]) > cross(dir, C[b]); 
   });
 }
@@ -7,7 +8,7 @@ int TangentDir(vector<pll> &C, pll dir) {
 pii lineHull(pll a, pll b, vector<pll> &C) {
   int A = TangentDir(C, a - b);
   int B = TangentDir(C, b - a);
-  int n = SZ(C);
+  int n = (int)C.size();
   if (cmpL(A) < 0 || cmpL(B) > 0) 
     return pii(-1, -1); // no collision
   auto gao = [&](int l, int r) {
@@ -18,12 +19,12 @@ pii lineHull(pll a, pll b, vector<pll> &C) {
     return (l + !cmpL(r)) % n;
   };
   pii res = pii(gao(B, A), gao(A, B)); // (i, j)
-  if (res.X == res.Y) // touching the corner i
-    return pii(res.X, -1);
-  if (!cmpL(res.X) && !cmpL(res.Y)) // along side i, i+1 
-    switch ((res.X - res.Y + n + 1) % n) {
-      case 0: return pii(res.X, res.X);
-      case 2: return pii(res.Y, res.Y);
+  if (res.F == res.S) // touching the corner i
+    return pii(res.F, -1);
+  if (!cmpL(res.F) && !cmpL(res.S)) // along side i, i+1 
+    switch ((res.F - res.S + n + 1) % n) {
+      case 0: return pii(res.F, res.F);
+      case 2: return pii(res.S, res.S);
     }
   /* crossing sides (i, i+1) and (j, j+1)
   crossing corner i is treated as side (i, i+1)

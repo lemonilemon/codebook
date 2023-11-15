@@ -1,3 +1,4 @@
+#include "common.h"
 int cnt[maxn], cost[maxn], st[maxn], ed[maxn];
 pair<int, int> qr[maxn];
 // qr[i].first = id of edge to be changed, qr[i].second = weight after operation

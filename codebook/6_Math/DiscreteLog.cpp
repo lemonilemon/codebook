@@ -1,3 +1,4 @@
+#include "common.h"
 int DiscreteLog(int s, int x, int y, int m) {
   constexpr int kStep = 32000;
   unordered_map<int, int> p;

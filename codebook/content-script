@@ -18,6 +18,7 @@
 + Theorems,				2_Graph/graph.tex,	None,					GraphTheorems,		true,	8BQube,
 
 - Flow-Matching 
++ HopcroftKarp,         None,   4_Flow_Matching/Hopcroft-Karp.cpp,                  HopcroftKarp,                   true,   kactl,
 + Dinic,				None,	4_Flow_Matching/Dinic.cpp,							Dinic,							false,	8BQube,
 + BipartiteMatching,	None,	4_Flow_Matching/Bipartite_Matching.cpp,				BipartieMatching (unweighted),	false,	8BQube,
 + KM,					None,	4_Flow_Matching/Kuhn_Munkres.cpp,					BipartieMatching (weighted),	true,	8BQube,
@@ -97,7 +98,7 @@
 + PolyIntersectCirc,	None,	8_Geometry/Intersection_of_polygon_and_circle.cpp,,	true,	8BQube,
 + PolyUnion,			None,	8_Geometry/PolyUnion.cpp,	not yet know usage,		false,	8BQube,
 + PolyCut,				None,	8_Geometry/PolyCut.cpp,	not yet know usage,			false,	8BQube,
-+ MinkowskiSum,			None,	8_Geometry/Minkowski_Sum.cpp,			,			false,	8BQube,
++ MinkowskiSum,			None,	8_Geometry/Minkowski_Sum.cpp,			,			true,	8BQube,
 + MinMaxEnclosingRect,	None,	8_Geometry/minMaxEnclosingRectangle.cpp,,			true,	8BQube,
 + MinEnclosingCircle,	None,	8_Geometry/Minimum_Enclosing_Circle.cpp,,			true,	8BQube,
 + CircleCover,			None,	8_Geometry/CircleCover.cpp,				,			true,	8BQube,

@@ -1,6 +1,8 @@
+#include "Fraction.cpp"
+#undef M
 struct matrix { //m variables, n equations
   int n, m;
-  fraction M[MAXN][MAXN + 1], sol[MAXN];
+  fraction M[N][N + 1], sol[N];
   int solve() { //-1: inconsistent, >= 0: rank
     for (int i = 0; i < n; ++i) {
       int piv = 0;

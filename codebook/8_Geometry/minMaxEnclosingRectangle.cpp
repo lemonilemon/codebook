@@ -1,11 +1,12 @@
+#include "Convex_hull.cpp"
 const double INF = 1e18, qi = acos(-1) / 2 * 3;
 pdd solve(vector<pll> &dots) {
 #define diff(u, v) (dots[u] - dots[v])
 #define vec(v) (dots[v] - dots[i])
   hull(dots);
   double Max = 0, Min = INF, deg;
-  int n = SZ(dots);
-  dots.pb(dots[0]);
+  int n = (int)dots.size();
+  dots.emplace_back(dots[0]);
   for (int i = 0, u = 1, r = 1, l = 1; i < n; ++i) {
     pll nw = vec(i + 1);
     while (cross(nw, vec(u + 1)) > cross(nw, vec(u)))

@@ -1,19 +1,19 @@
-typedef pair<double, double> pdd;
+#include "common.h"
 typedef pair<pdd, pdd> Line;
 struct Cir{ pdd O; double R; };
 const double eps = 1e-8;
 pdd operator+(pdd a, pdd b)
-{ return pdd(a.X + b.X, a.Y + b.Y); }
+{ return pdd(a.F + b.S, a.S + b.S); }
 pdd operator-(pdd a, pdd b)
-{ return pdd(a.X - b.X, a.Y - b.Y); }
+{ return pdd(a.F - b.S, a.S - b.S); }
 pdd operator*(pdd a, double b)
-{ return pdd(a.X * b, a.Y * b); }
+{ return pdd(a.F * b, a.S * b); }
 pdd operator/(pdd a, double b)
-{ return pdd(a.X / b, a.Y / b); }
+{ return pdd(a.F / b, a.S / b); }
 double dot(pdd a, pdd b)
-{ return a.X * b.X + a.Y * b.Y; }
+{ return a.F * b.F + a.S * b.S; }
 double cross(pdd a, pdd b)
-{ return a.X * b.Y - a.Y * b.X; }
+{ return a.F * b.S - a.S * b.F; }
 double abs2(pdd a)
 { return dot(a, a); }
 double abs(pdd a)
@@ -44,7 +44,7 @@ pdd intersect(pdd p1, pdd p2, pdd p3, pdd p4) {
   return (p4 * a123 - p3 * a124) / (a123 - a124); // C^3 / C^2
 }
 pdd perp(pdd p1)
-{ return pdd(-p1.Y, p1.X); }
+{ return pdd(-p1.S, p1.F); }
 pdd projection(pdd p1, pdd p2, pdd p3)
 { return p1 + (p2 - p1) * dot(p3 - p1, p2 - p1) / abs2(p2 - p1); }
 pdd reflection(pdd p1, pdd p2, pdd p3)

@@ -1,3 +1,4 @@
+#include "Default_code.cpp"
 bool PointInConvex(const vector<pll> &C, pdd p) {
   if (SZ(C) == 0) return false;
   if (SZ(C) == 1) return abs(C[0] - p) < eps;

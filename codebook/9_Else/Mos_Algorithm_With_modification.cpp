@@ -1,3 +1,4 @@
+#include "common.h"
 /*
 Mo's Algorithm With modification
 Block: N^{2/3}, Complexity: N^{5/3}

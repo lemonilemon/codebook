@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 #define pii pair<int, int>
 #define pll pair<ll, ll>
+#define pdd pair<double, double>
 #define ll long long
 #define ld long double
 #define i128 __int128
@@ -14,3 +15,5 @@ using namespace std;
 #define N 1'000'000
 #define M 1'000'000
 #define INF 1'000'000'000'000'000'000
+
+const ll mod = 998'244'353;

@@ -21,6 +21,7 @@
 ## Flow-Matching
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |
+|HopcroftKarp ||[4_Flow_Matching/Hopcroft-Karp.cpp](4_Flow_Matching/Hopcroft-Karp.cpp)|HopcroftKarp        |true   ||
 |KM ||[4_Flow_Matching/Kuhn_Munkres.cpp](4_Flow_Matching/Kuhn_Munkres.cpp)|BipartieMatching (weighted)        |true   ||
 |MCMF ||[4_Flow_Matching/MincostMaxflow.cpp](4_Flow_Matching/MincostMaxflow.cpp)|MCMF        |true   ||
 |GeneralGraphMatching ||[4_Flow_Matching/Maximum_Simple_Graph_Matching.cpp](4_Flow_Matching/Maximum_Simple_Graph_Matching.cpp)|SimpleGraphMatching        |true   ||
@@ -93,6 +94,7 @@
 |LineConvexIntersect ||[8_Geometry/Intersection_of_line_and_convex.cpp](8_Geometry/Intersection_of_line_and_convex.cpp)|        |true   ||
 |CircIntersectCirc ||[8_Geometry/Intersection_of_two_circles.cpp](8_Geometry/Intersection_of_two_circles.cpp)|        |true   ||
 |PolyIntersectCirc ||[8_Geometry/Intersection_of_polygon_and_circle.cpp](8_Geometry/Intersection_of_polygon_and_circle.cpp)|        |true   ||
+|MinkowskiSum ||[8_Geometry/Minkowski_Sum.cpp](8_Geometry/Minkowski_Sum.cpp)|        |true   ||
 |MinMaxEnclosingRect ||[8_Geometry/minMaxEnclosingRectangle.cpp](8_Geometry/minMaxEnclosingRectangle.cpp)|        |true   ||
 |MinEnclosingCircle ||[8_Geometry/Minimum_Enclosing_Circle.cpp](8_Geometry/Minimum_Enclosing_Circle.cpp)|        |true   ||
 |CircleCover ||[8_Geometry/CircleCover.cpp](8_Geometry/CircleCover.cpp)|        |true   ||

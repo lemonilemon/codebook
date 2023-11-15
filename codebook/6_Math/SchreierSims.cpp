@@ -1,3 +1,4 @@
+#include "common.h"
 namespace schreier {
 int n;
 vector<vector<vector<int>>> bkts, binv;

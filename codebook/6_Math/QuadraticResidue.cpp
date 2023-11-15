@@ -1,5 +1,5 @@
-// Berlekamp-Rabin
-
+#include "common.h"
+// Berlekamp-Rabin, log^2(p)
 ll trial(ll y, ll z, ll m) {
   ll a0 = 1, a1 = 0, b0 = z, b1 = 1, p = (m - 1) / 2;
   while (p) {
@@ -15,9 +15,7 @@ ll trial(ll y, ll z, ll m) {
   if (a1) return inv(a1, m);
   return -1;
 }
-
 mt19937 rd(49);
-
 ll psqrt(ll y, ll p) {
   if (fpow(y, (p - 1) / 2, p) != 1) return -1;
   for (int i = 0; i < 30; i++) {

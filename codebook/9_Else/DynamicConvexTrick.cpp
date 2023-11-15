@@ -1,3 +1,4 @@
+#include "common.h"
 // only works for integer coordinates!! maintain max
 struct Line {
   mutable ll a, b, p;

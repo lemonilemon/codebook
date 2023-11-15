@@ -1,3 +1,4 @@
+#include "Default_code.cpp"
 vector<pdd> circleLine(pdd c, double r, pdd a, pdd b) {
   pdd p = a + (b - a) * dot(c - a, b - a) / abs2(b - a);
   double s = cross(b - a, c - a), h2 = r * r - s * s / abs2(b - a);

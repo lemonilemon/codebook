@@ -1,3 +1,4 @@
+#include "common.h"
 //9223372036737335297, 3
 #define base ll // complex<double>
 #define N 524288

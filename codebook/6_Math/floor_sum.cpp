@@ -1,3 +1,4 @@
+#include "common.h"
 ll floorsum(ll A, ll B, ll C, ll N) {
   if (A == 0) return (N + 1) * (B / C);
   if (A > C || B > C)

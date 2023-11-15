@@ -1,3 +1,4 @@
+#include "common.h"
 template<typename T>
 inline string to_string(const T& x){
   stringstream ss;
@@ -88,7 +89,7 @@ struct bigN:vector<ll>{
         if((res[i+j]+=at(i)*b[j])>=base){
           res[i+j+1]+=res[i+j]/base;
           res[i+j]%=base;
-        }//­¼ªk¥Îcarry·|·¸¦ì
+        }//ï¿½ï¿½ï¿½kï¿½ï¿½carryï¿½|ï¿½ï¿½ï¿½ï¿½
     return res.trim(),res;
   }
   bigN operator/(const bigN &b)const{

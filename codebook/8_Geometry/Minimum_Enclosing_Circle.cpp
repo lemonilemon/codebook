@@ -1,3 +1,4 @@
+#include "Default_code.cpp"
 pdd Minimum_Enclosing_Circle(vector<pdd> dots, double &r) {
   pdd cent;
   random_shuffle(ALL(dots));

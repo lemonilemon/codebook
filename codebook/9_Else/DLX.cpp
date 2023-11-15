@@ -1,3 +1,4 @@
+#include "common.h"
 #define TRAV(i, link, start) for (int i = link[start]; i != start; i = link[i])
 template<bool E> // E: Exact, NN: num of 1s, RR: num of rows
 struct DLX {

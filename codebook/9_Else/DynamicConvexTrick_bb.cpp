@@ -1,3 +1,4 @@
+#include "common.h"
 // only works for integer coordinates!!
 
 bool Flag; // 0: insert Line, 1: lower_bound x

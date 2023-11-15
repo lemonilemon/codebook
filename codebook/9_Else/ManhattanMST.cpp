@@ -1,3 +1,4 @@
+#include "common.h"
 void solve(Point *a, int n) {
     sort(a, a + n, [](const Point &p, const Point &q) {
         return p.x + p.y < q.x + q.y;

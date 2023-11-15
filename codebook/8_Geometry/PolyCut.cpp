@@ -1,12 +1,13 @@
+#include "Default_code.cpp"
 vector<pdd> cut(vector<pdd> poly, pdd s, pdd e) {
   vector<pdd> res;
-  for (int i = 0; i < SZ(poly); ++i) {
+  for (int i = 0; i < (int)poly.size(); ++i) {
     pdd cur = poly[i], prv = i ? poly[i - 1] : poly.back();
     bool side = ori(s, e, cur) < 0;
     if (side != (ori(s, e, prv) < 0))
-      res.pb(intersect(s, e, cur, prv));
+      res.emplace_back(intersect(s, e, cur, prv));
     if (side)
-      res.pb(cur);
+      res.emplace_back(cur);
   }
   return res;
 }

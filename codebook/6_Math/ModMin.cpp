@@ -1,3 +1,4 @@
+#include "common.h"
 // min{k | l <= ((ak) mod m) <= r}, no solution -> -1
 ll mod_min(ll a, ll m, ll l, ll r) {
   if (a == 0) return l ? -1 : 0;

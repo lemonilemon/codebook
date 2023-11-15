@@ -94,9 +94,7 @@ void iterate() {
   dis.resize(n);
   from.resize(n);
   vis.resize(n);
-
   for (int i = 1; i < n; i++) dis[i] = 1e18;
-
   for (int t = 0; t < n; t++) {
     int u = 0;
     ld d = 1e18;

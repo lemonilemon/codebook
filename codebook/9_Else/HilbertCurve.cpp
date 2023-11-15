@@ -1,3 +1,4 @@
+#include "common.h"
 ll hilbert(int n, int x, int y) {
   ll res = 0;
   for (int s = n / 2; s; s >>= 1) {

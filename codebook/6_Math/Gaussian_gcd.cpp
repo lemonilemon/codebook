@@ -1,3 +1,4 @@
+#include "common.h"
 cpx gaussian_gcd(cpx a, cpx b) {
 #define rnd(a, b) ((a >= 0 ? a * 2 + b : a * 2 - b) / (b * 2))
   ll c = a.real() * b.real() + a.imag() * b.imag();

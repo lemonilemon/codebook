@@ -1,3 +1,4 @@
+#include "common.h"
 template<int MAXN>
 struct FFT {
   using val_t = complex<double>;

@@ -1,3 +1,4 @@
+#include "common.h"
 double factor = 100000;
 const int base = 1e9; // remember to run ~ 10 times
 for (int it = 1; it <= 1000000; ++it) {

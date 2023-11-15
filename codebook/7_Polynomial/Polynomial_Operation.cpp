@@ -1,5 +1,5 @@
-#define poly vector<base>
-
+#include "NTT.cpp"
+#define poly vector<ll>
 poly inv(poly A) {
   A.resize(1 << (__lg(A.size() - 1) + 1));
   poly B = {inverse(A[0])};

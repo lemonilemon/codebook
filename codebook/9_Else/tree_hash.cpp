@@ -1,3 +1,4 @@
+#include "common.h"
 ull seed;
 ull shift(ull x) {
   x ^= x << 13; 

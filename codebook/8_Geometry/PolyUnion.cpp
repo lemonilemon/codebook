@@ -1,16 +1,17 @@
+#include "Default_code.cpp"
 double rat(pll a, pll b) {
-  return sign(b.X) ? (double)a.X / b.X : (double)a.Y / b.Y;
+  return sign(b.F) ? (double)a.F / b.F : (double)a.S / b.S;
 } // all poly. should be ccw
 double polyUnion(vector<vector<pll>> &poly) {
   double res = 0;
   for (auto &p : poly)
-    for (int a = 0; a < SZ(p); ++a) {
-      pll A = p[a], B = p[(a + 1) % SZ(p)];
+    for (int a = 0; a < (int)p.size(); ++a) {
+      pll A = p[a], B = p[(a + 1) % (int)p.size()];
       vector<pair<double, int>> segs = {{0, 0}, {1, 0}};
       for (auto &q : poly) {
         if (&p == &q) continue;
-        for (int b = 0; b < SZ(q); ++b) {
-          pll C = q[b], D = q[(b + 1) % SZ(q)];
+        for (int b = 0; b < (int)q.size(); ++b) {
+          pll C = q[b], D = q[(b + 1) % (int)q.size()];
           int sc = ori(A, B, C), sd = ori(A, B, D);
           if (sc != sd && min(sc, sd) < 0) {
             double sa = cross(D - C, A - C), sb = cross(D - C, B - C);
@@ -22,13 +23,13 @@ double polyUnion(vector<vector<pll>> &poly) {
           }
         }
       }
-      sort(ALL(segs));
-      for (auto &s : segs) s.X = clamp(s.X, 0.0, 1.0);
+      sort(all(segs));
+      for (auto &s : segs) s.F = clamp(s.F, 0.0, 1.0);
       double sum = 0;
       int cnt = segs[0].second;
-      for (int j = 1; j < SZ(segs); ++j) {
-        if (!cnt) sum += segs[j].X - segs[j - 1].X;
-        cnt += segs[j].Y;
+      for (int j = 1; j < (int)segs.size(); ++j) {
+        if (!cnt) sum += segs[j].F - segs[j - 1].F;
+        cnt += segs[j].S;
       }
       res += cross(A, B) * sum;
     }
