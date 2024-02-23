@@ -1,104 +1,58 @@
-#include "common.h"
-struct Splay { // xor-sum
-  static Splay nil;
-  Splay *ch[2], *f;
-  int val, sum, rev, size;
-  Splay(int _val = 0)
-    : val(_val), sum(_val), rev(0), size(1) {
-    f = ch[0] = ch[1] = &nil;
-  }
-  bool isr() {
-    return f->ch[0] != this && f->ch[1] != this;
-  }
-  int dir() { return f->ch[0] == this ? 0 : 1; }
-  void setCh(Splay *c, int d) {
-    ch[d] = c;
-    if (c != &nil) c->f = this;
-    pull();
-  }
-  void give_tag(int r) {
-    if (r) swap(ch[0], ch[1]), rev ^= 1;
-  }
-  void push() {
-    if (ch[0] != &nil) ch[0]->give_tag(rev);
-    if (ch[1] != &nil) ch[1]->give_tag(rev);
-    rev = 0;
-  }
-  void pull() {
-    // take care of the nil!
-    size = ch[0]->size + ch[1]->size + 1;
-    sum = ch[0]->sum ^ ch[1]->sum ^ val;
-    if (ch[0] != &nil) ch[0]->f = this;
-    if (ch[1] != &nil) ch[1]->f = this;
-  }
-} Splay::nil;
-Splay *nil = &Splay::nil;
-void rotate(Splay *x) {
-  Splay *p = x->f;
-  int d = x->dir();
-  if (!p->isr()) p->f->setCh(x, p->dir());
-  else x->f = p->f;
-  p->setCh(x->ch[!d], d);
-  x->setCh(p, !d);
-  p->pull(), x->pull();
+#define ls(x) Tree[x].son[0]
+#define rs(x) Tree[x].son[1]
+#define fa(x) Tree[x].fa
+const int maxn = 600010;
+struct node{
+    int son[2], Min, id, fa, lazy;
+}Tree[maxn];
+int n, m, q, w[maxn], Min;
+struct Node{
+    int u, v, w;
+}a[maxn];
+inline bool IsRoot(int x){ return (ls(fa(x)) == x || rs(fa(x)) == x) ? false : true; }
+inline void PushUp(int x){
+  Tree[x].Min = w[x]; Tree[x].id = x;
+  if (ls(x) && Tree[ls(x)].Min < Tree[x].Min){ Tree[x].Min = Tree[ls(x)].Min; Tree[x].id = Tree[ls(x)].id; }
+  if (rs(x) && Tree[rs(x)].Min < Tree[x].Min){ Tree[x].Min = Tree[rs(x)].Min; Tree[x].id = Tree[rs(x)].id; }
 }
-void splay(Splay *x) {
-  vector<Splay *> splayVec;
-  for (Splay *q = x;; q = q->f) {
-    splayVec.emplace_back(q);
-    if (q->isr()) break;
+inline void Update(int x){ Tree[x].lazy ^= 1; swap(ls(x), rs(x)); }
+inline void PushDown(int x){
+  if (!Tree[x].lazy) return;
+  if (ls(x)) Update(ls(x));
+  if (rs(x)) Update(rs(x));
+  Tree[x].lazy = 0;
+}
+inline void Rotate(int x){
+  int y = fa(x), z = fa(y), k = rs(y) == x, w = Tree[x].son[!k];
+  if (!IsRoot(y)) Tree[z].son[rs(z) == y] = x;
+  fa(x) = z; fa(y) = x; if (w) fa(w) = y;
+  Tree[x].son[!k] = y; Tree[y].son[k] = w;
+  PushUp(y);
+}
+inline void Splay(int x){
+  stack<int> Stack; int y = x, z; Stack.push(y);
+  while (!IsRoot(y)) Stack.push(y = fa(y));
+  while (!Stack.empty()){ PushDown(Stack.top()); Stack.pop(); }
+  while (!IsRoot(x)){
+    y = fa(x); z = fa(y);
+    if (!IsRoot(y)) Rotate((ls(y) == x) ^ (ls(z) == y) ? x : y);
+    Rotate(x);
   }
-  reverse(all(splayVec));
-  for (auto it : splayVec) it->push();
-  while (!x->isr()) {
-    if (x->f->isr()) rotate(x);
-    else if (x->dir() == x->f->dir())
-      rotate(x->f), rotate(x);
-    else rotate(x), rotate(x);
+  PushUp(x);
+}
+inline void Access(int root){
+  for (int x = 0; root; x = root, root = fa(root)){
+    Splay(root); rs(root) = x; PushUp(root); 
   }
 }
-Splay *access(Splay *x) {
-  Splay *q = nil;
-  for (; x != nil; x = x->f)
-    splay(x), x->setCh(q, 1), q = x;
-  return q;
-}
-void root_path(Splay *x) { access(x), splay(x); }
-void chroot(Splay *x) {
-  root_path(x), x->give_tag(1);
-  x->push(), x->pull();
-}
-void split(Splay *x, Splay *y) {
-  chroot(x), root_path(y);
-}
-void link(Splay *x, Splay *y) {
-  root_path(x), chroot(y);
-  x->setCh(y, 1);
-}
-void cut(Splay *x, Splay *y) {
-  split(x, y);
-  if (y->size != 5) return;
-  y->push();
-  y->ch[0] = y->ch[0]->f = nil;
-}
-Splay *get_root(Splay *x) {
-  for (root_path(x); x->ch[0] != nil; x = x->ch[0])
-    x->push();
-  splay(x);
-  return x;
-}
-bool conn(Splay *x, Splay *y) {
-  return get_root(x) == get_root(y);
-}
-Splay *lca(Splay *x, Splay *y) {
-  access(x), root_path(y);
-  if (y->f == nil) return y;
-  return y->f;
-}
-void change(Splay *x, int val) {
-  splay(x), x->val = val, x->pull();
-}
-int query(Splay *x, Splay *y) {
-  split(x, y);
-  return y->sum;
+inline void MakeRoot(int x){ Access(x); Splay(x); Update(x); }
+inline int FindRoot(int x){ Access(x); Splay(x); while ( ls(x) ) x = ls(x); Splay(x); return x; }
+inline void Link(int u, int v){ MakeRoot(u); if (FindRoot(v) != u ) fa(u) = v; }
+inline void Cut(int u, int v){ MakeRoot(u); if (FindRoot(v) != u || fa(v) != u || ls(v)) return ; fa(v) = rs(u) = 0; }
+inline void Split(int u, int v){ MakeRoot(u); Access(v); Splay(v); }
+inline bool Check(int u, int v){ MakeRoot(u); return FindRoot(v) == u; }
+inline int LCA(int root, int u, int v){ 
+  MakeRoot(root); Access(u); Access(v); Splay(u);
+  if (!fa(u)){ Access(u), Splay(v); return fa(v); }
+  return fa(u);
 }
