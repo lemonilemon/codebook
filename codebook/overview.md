@@ -11,7 +11,6 @@
 |BCC Vertex ||[2_Graph/BCC_Vertex.cpp](2_Graph/BCC_Vertex.cpp)|BCC        |true   ||
 |MinimumMeanCycle ||[2_Graph/MinimumMeanCycle.cpp](2_Graph/MinimumMeanCycle.cpp)|MinimumMeanCycle        |true   ||
 |MaximumCliqueDyn ||[2_Graph/Maximum_Clique_Dyn.cpp](2_Graph/Maximum_Clique_Dyn.cpp)|Maximum_Clique_Dyn        |true   ||
-|MinimumSteinerTree ||[2_Graph/MinimumSteinerTree.cpp](2_Graph/MinimumSteinerTree.cpp)|MinimumSteinerTree        |true   ||
 |DMST(slow) ||[2_Graph/Minimum_Arborescence.cpp](2_Graph/Minimum_Arborescence.cpp)|DMST        |true   ||
 |DMST ||[2_Graph/DMST.cpp](2_Graph/DMST.cpp)|DMST        |true   ||
 |VizingTheorem ||[2_Graph/Vizing.cpp](2_Graph/Vizing.cpp)|Vizing        |true   ||
@@ -98,13 +97,13 @@
 |MinMaxEnclosingRect ||[8_Geometry/minMaxEnclosingRectangle.cpp](8_Geometry/minMaxEnclosingRectangle.cpp)|        |true   ||
 |MinEnclosingCircle ||[8_Geometry/Minimum_Enclosing_Circle.cpp](8_Geometry/Minimum_Enclosing_Circle.cpp)|        |true   ||
 |CircleCover ||[8_Geometry/CircleCover.cpp](8_Geometry/CircleCover.cpp)|        |true   ||
+|LineCmp ||[8_Geometry/LineCmp.cpp](8_Geometry/LineCmp.cpp)|        |true   ||
 |Trapezoidalization ||[8_Geometry/Trapezoidalization.cpp](8_Geometry/Trapezoidalization.cpp)|        |true   ||
 |TriangleHearts ||[8_Geometry/Heart.cpp](8_Geometry/Heart.cpp)|        |true   ||
 |HalfPlaneIntersect ||[8_Geometry/Half_plane_intersection.cpp](8_Geometry/Half_plane_intersection.cpp)|        |true   ||
 |RotatingSweepLine ||[8_Geometry/rotatingSweepLine.cpp](8_Geometry/rotatingSweepLine.cpp)|        |true   ||
 |DelaunayTriangulation ||[8_Geometry/DelaunayTriangulation.cpp](8_Geometry/DelaunayTriangulation.cpp)|        |true   ||
 |VonoroiDiagram ||[8_Geometry/Triangulation_Vonoroi.cpp](8_Geometry/Triangulation_Vonoroi.cpp)|        |true   ||
-|3DConeDistance ||[8_Geometry/3DConeDist.cpp](8_Geometry/3DConeDist.cpp)|        |true   ||
 ## Misc
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |
@@ -117,3 +116,4 @@
 |AllLCS ||[9_Else/All_LCS.cpp](9_Else/All_LCS.cpp)|        |true   ||
 |SimulatedAnnealing ||[9_Else/simulated_annealing.cpp](9_Else/simulated_annealing.cpp)|        |true   ||
 |Python ||[11_Python/misc.py](11_Python/misc.py)|        |true   ||
+|LineContainer ||[9_Else/LineContainer.cpp](9_Else/LineContainer.cpp)|        |true   ||

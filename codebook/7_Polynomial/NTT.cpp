@@ -1,5 +1,5 @@
 #include "common.h"
-//9223372036737335297, 3
+// 9223372036737335297, 3
 #define base ll // complex<double>
 #define N 524288
 // const double PI = acosl(-1);
@@ -21,9 +21,8 @@ void calcW(int n) {
   // double arg = 2.0 * PI / n;
   // for (int i = 0; i < n; i++)
   // {
-  //     omega[i] = base(cos(i * arg), sin(i * arg));
-  //     omega_[i] = base(cos(-i * arg), sin(-i *
-  //     arg));
+  //   omega[i] = base(cos(i * arg), sin(i * arg));
+  //   omega_[i] = base(cos(-i * arg), sin(-i * arg));
   // }
 }
 

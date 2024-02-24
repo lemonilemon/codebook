@@ -10,6 +10,8 @@ with open("content-script") as script:
         if line[0] == '#': # comment
             continue
         
+        print(line)
+
         if line[0] == '-': # section
             tex.write("\section{{{0}}}\n".format(line[1:].strip()))
             md.write("## {0}\n".format(line[1:].strip()))
