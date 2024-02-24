@@ -10,4 +10,4 @@ tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update> 
 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/priority_queue.hpp>
-__gnu_pbds::priority_queue<int, greater<int>, pairing_heap_tag> pq;
+__gnu_pbds::priority_queue<int, greater<int>, thin_heap_tag> pq;

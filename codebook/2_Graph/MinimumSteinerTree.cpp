@@ -23,7 +23,7 @@ struct SteinerTree { // 0-base
   }
   int solve(const vector<int>& ter) {
     shortest_path();
-    int t = SZ(ter), full = (1 << t) - 1;
+    int t = ter.size(), full = (1 << t) - 1;
     for (int i = 0; i <= full; ++i)
       fill_n(dp[i], n, INF);
     copy_n(vcst, n, dp[0]);
