@@ -1,28 +1,20 @@
-vector<int> vG[N];
-int top, st[N];
-
-void insert(int u) {
-  if (top == -1) return st[++top] = u, void();
-  int p = LCA(st[top], u);
-  if (p == st[top]) return st[++top] = u, void();
-  while (top >= 1 && dep[st[top - 1]] >= dep[p])
-    vG[st[top - 1]].pb(st[top]), --top;
-  if (st[top] != p)
-    vG[p].pb(st[top]), --top, st[++top] = p;
-  st[++top] = u;
+#include "common.h"
+vector<int> tre[N];
+bool cmp(int a, int b){ return in[a] < in[b]; }
+void add_edge(int a, int b){
+  tre[a].emplace_back(b);
+  tre[b].emplace_back(a);
 }
-
-void reset(int u) {
-  for (int i : vG[u]) reset(i);
-  vG[u].clear();
-}
-
-void solve(vector<int> &v) {
-  top = -1;
-  sort(ALL(v),
-    [&](int a, int b) { return dfn[a] < dfn[b]; });
-  for (int i : v) insert(i);
-  while (top > 0) vG[st[top - 1]].pb(st[top]), --top;
-  // do something
-  reset(v[0]);
+void virtual_tree(vector<int> arr, int k){
+  vector<int> sta;
+  sort(arr.begin(), arr.end(), cmp);
+  for (int i = 1; i < k; i++)
+    arr.emplace_back(lca(arr[i], arr[i - 1]));
+  sort(arr.begin(), arr.end(), cmp);
+  arr.resize(unique(arr.begin(), arr.end()) - arr.begin());
+  for (auto i : arr){
+    while (!sta.empty() && !check_anc(sta.back(), i)) sta.pop_back();
+    if (!sta.empty()) add_edge(sta.back(), i);
+    sta.push_back(i);
+  }
 }
