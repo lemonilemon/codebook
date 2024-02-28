@@ -49,7 +49,7 @@
 ## Number Theory
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |
-|Primes ||[6_Math/Primes.cpp](6_Math/Primes.cpp)|Primes        |true   ||
+|Primes |[6_Math/Primes.tex](6_Math/Primes.tex)||Primes        |true   ||
 |ExtGCD ||[6_Math/ExtGCD.cpp](6_Math/ExtGCD.cpp)|Extended Euclidean Algo        |true   ||
 |FloorCeil ||[6_Math/floor_ceil.cpp](6_Math/floor_ceil.cpp)|Safe Floor and Ceil        |true   ||
 |FloorSum ||[6_Math/floor_sum.cpp](6_Math/floor_sum.cpp)|Floor Sum        |true   ||
@@ -90,6 +90,7 @@
 |PointInConvex ||[8_Geometry/PointInConvex.cpp](8_Geometry/PointInConvex.cpp)|        |true   ||
 |PointTangentConvex ||[8_Geometry/TangentPointToHull.cpp](8_Geometry/TangentPointToHull.cpp)|        |true   ||
 |CircTangentCirc ||[8_Geometry/Tangent_line_of_two_circles.cpp](8_Geometry/Tangent_line_of_two_circles.cpp)|        |true   ||
+|LineCircleIntersect ||[8_Geometry/Intersection_of_line_and_circle.cpp](8_Geometry/Intersection_of_line_and_circle.cpp)|        |true   ||
 |LineConvexIntersect ||[8_Geometry/Intersection_of_line_and_convex.cpp](8_Geometry/Intersection_of_line_and_convex.cpp)|        |true   ||
 |CircIntersectCirc ||[8_Geometry/Intersection_of_two_circles.cpp](8_Geometry/Intersection_of_two_circles.cpp)|        |true   ||
 |PolyIntersectCirc ||[8_Geometry/Intersection_of_polygon_and_circle.cpp](8_Geometry/Intersection_of_polygon_and_circle.cpp)|        |true   ||

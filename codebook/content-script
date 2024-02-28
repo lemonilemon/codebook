@@ -52,7 +52,7 @@
 + PalindromeTree,		None,	5_String/PalTree.cpp,					PalindromeTree,	true,	8BQube,
 
 - Number Theory
-+ Primes,				None,			6_Math/Primes.cpp,					Primes,							true,	8BQube,
++ Primes,				6_Math/Primes.tex,			None,					Primes,							true,	8BQube,
 + ExtGCD,				None,			6_Math/ExtGCD.cpp,					Extended Euclidean Algo,		true,	LittleCube,
 + FloorCeil,			None,			6_Math/floor_ceil.cpp,				Safe Floor and Ceil,			true,	8BQube,
 + GaussianIntegerGCD,	None,			6_Math/Gaussian_gcd.cpp,			WTF,							false,	8BQube,
@@ -93,6 +93,7 @@
 + PointInConvex,		None,	8_Geometry/PointInConvex.cpp,			,			true,	8BQube,
 + PointTangentConvex,	None,	8_Geometry/TangentPointToHull.cpp,		,			true,	8BQube,
 + CircTangentCirc,		None,	8_Geometry/Tangent_line_of_two_circles.cpp,,		true,	8BQube,
++ LineCircleIntersect,	None,	8_Geometry/Intersection_of_line_and_circle.cpp,,	true,	8BQube,
 + LineConvexIntersect,	None,	8_Geometry/Intersection_of_line_and_convex.cpp,,	true,	8BQube,
 + CircIntersectCirc,	None,	8_Geometry/Intersection_of_two_circles.cpp,,		true,	8BQube,
 + PolyIntersectCirc,	None,	8_Geometry/Intersection_of_polygon_and_circle.cpp,,	true,	8BQube,
