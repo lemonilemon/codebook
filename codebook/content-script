@@ -76,7 +76,7 @@
 - Linear Algebra
 + GuassianElimination,	None,			6_Math/Simultaneous_Equations.cpp,	Guassian Elimination,			true,	8BQube,
 + BerlekampMassey,		None,			6_Math/Berlekamp-Massey.cpp,		Find Linear Recursion,			true,	8BQube,
-+ Simplex,				6_Math/SimplexConstruction.tex,	6_Math/Simplex.cpp,	Simplex Method,					true,	8BQube & LittleCube,
++ Simplex,				6_Math/SimplexConstruction.tex,	6_Math/Simplex.cpp,	Simplex Method,					true,	8BQube & LittleCube, UOJ 179 https://uoj.ac/submission/686996
 
 - Polynomials
 + NTT (FFT),			None,	7_Polynomial/NTT.cpp,					NTT (FFT),	true,	LittleCube,
