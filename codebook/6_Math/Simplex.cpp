@@ -1,10 +1,11 @@
 #include "common.h"
 // using N + 2M variables
-const int mxN = 1005;
+const int mxM = 25;
+const int mxN = 25 + 2 * mxM;
 struct simplex {
   const double inf = 1 / .0, eps = 1e-9;
   int n, m, k, var[mxN], inv[mxN], art[mxN];
-  double A[mxN][mxN], B[mxN], x[mxN];
+  double A[mxM][mxN], B[mxM], x[mxN];
   void init(int _n) { n = _n, m = 0; }
   void equation(vector<double> a, double b) {
     for (int i = 0; i < n; i++) A[m][i] = a[i];
