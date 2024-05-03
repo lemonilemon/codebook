@@ -6,7 +6,5 @@ Codebook of NTU RngBased forked from 8BQube
 
 TODO:
 - Treap
-- Hopcroft-Karp
-- Minkowski Sum
 - Line Sorter O(N^2 log N)
 - SCC

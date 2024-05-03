@@ -113,8 +113,8 @@
 |MoAlgoAdvanced |[9_Else/Mos_Algorithm.tex](9_Else/Mos_Algorithm.tex)||        |8BQube   ||
 |HilbertCurve ||[9_Else/HilbertCurve.cpp](9_Else/HilbertCurve.cpp)|Mo's optimize        |8BQube   ||
 |SternBrocotTree |[9_Else/SBTree.tex](9_Else/SBTree.tex)||        |LittleCube   ||
-|CyclicLCS ||[9_Else/cyclicLCS.cpp](9_Else/cyclicLCS.cpp)|        |8BQube   ||
 |AllLCS ||[9_Else/All_LCS.cpp](9_Else/All_LCS.cpp)|        |8BQube   ||
 |SimulatedAnnealing ||[9_Else/simulated_annealing.cpp](9_Else/simulated_annealing.cpp)|        |8BQube   ||
+|SMAWK ||[9_Else/SMAWK.cpp](9_Else/SMAWK.cpp)|        |LittleCube   |BZOJ 2739 https://darkbzoj.cc/problem/2739|
 |Python ||[11_Python/misc.py](11_Python/misc.py)|        |LittleCube   ||
 |LineContainer ||[9_Else/LineContainer.cpp](9_Else/LineContainer.cpp)|        |kactl   ||

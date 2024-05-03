@@ -121,10 +121,11 @@
 + HilbertCurve,			None,	9_Else/HilbertCurve.cpp,						Mo's optimize,	true,	8BQube,
 + DynamicCHT,			None,	9_Else/DynamicConvexTrick.cpp,					,				false,	8BQube,
 + SternBrocotTree,		9_Else/SBTree.tex,				None,					,				true,	LittleCube,
-+ CyclicLCS,			None,	9_Else/cyclicLCS.cpp,							,				true,	8BQube,
++ CyclicLCS,			None,	9_Else/cyclicLCS.cpp,							,				false,	8BQube,
 + AllLCS,				None,	9_Else/All_LCS.cpp,								,				true,	8BQube,
 + DLX,					None,	9_Else/DLX.cpp,									,				false,	8BQube,
 + MatroidIntersection,	9_Else/Matroid.tex,				None,					,				false,	8BQube,
 + SimulatedAnnealing,	None,	9_Else/simulated_annealing.cpp,					,				true,	8BQube,
++ SMAWK,				None,	9_Else/SMAWK.cpp,								,				true,	LittleCube, BZOJ 2739 https://darkbzoj.cc/problem/2739
 + Python,				None,	11_Python/misc.py,								,				true,	LittleCube,
 + LineContainer,        None,   9_Else/LineContainer.cpp,                       ,               true,   kactl,
