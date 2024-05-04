@@ -6,7 +6,7 @@
 \usepackage{amssymb}
 \usepackage{fontspec}								
 \usepackage{color}
-\usepackage[x11names]{xcolor}
+\usepackage[x11names,dvipsnames]{xcolor}
 \usepackage{listings}								
 \usepackage{fancyhdr}								
 \usepackage{graphicx}								
@@ -36,8 +36,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setmainfont{Ubuntu Mono}				%主要字型
-\setmonofont{Ubuntu Mono}
+\setmainfont[
+  ExternalLocation =  fonts/,
+  UprightFont     = JetBrainsMono-Regular.ttf,
+  BoldFont        = JetBrainsMono-Bold.ttf,
+  ItalicFont      = JetBrainsMono-Italic.ttf,
+  BoldItalicFont  = JetBrainsMono-BoldItalic.ttf]{JetBrainsMono}
+\setmonofont[
+  ExternalLocation =  fonts/,
+  UprightFont     = JetBrainsMono-Regular.ttf,
+  BoldFont        = JetBrainsMono-Bold.ttf,
+  ItalicFont      = JetBrainsMono-Italic.ttf,
+  BoldItalicFont  = JetBrainsMono-BoldItalic.ttf]{JetBrainsMono}
 \XeTeXlinebreaklocale "zh"						%中文自動換行
 \XeTeXlinebreakskip = 0pt plus 1pt				%設定段落之間的距離
 \setcounter{secnumdepth}{3}						%目錄顯示第三層
@@ -54,10 +64,6 @@
 \lstset{											% Code顯示
 language=C++,										% the language of the code
 basicstyle=\footnotesize\ttfamily, 						% the size of the fonts that are used for the code
-%numbers=left,										% where to put the line-numbers
-numberstyle=\footnotesize,						% the size of the fonts that are used for the line-numbers
-stepnumber=1,										% the step between two line-numbers. If it's 1, each line  will be numbered
-numbersep=5pt,										% how far the line-numbers are from the code
 backgroundcolor=\color{white},					% choose the background color. You must add \usepackage{color}
 showspaces=false,									% show spaces adding particular underscores
 showstringspaces=false,							% underline spaces within strings
@@ -68,8 +74,10 @@ captionpos=b,										% sets the caption-position to bottom
 breaklines=true,									% sets automatic line breaking
 breakatwhitespace=false,							% sets if automatic breaks should only happen at whitespace
 escapeinside={\%*}{*)},							% if you want to add a comment within your code
-morekeywords={constexpr,ll},									% if you want to add more keywords to the set
+morekeywords={constexpr,ll,pii,pdd,pll},									% if you want to add more keywords to the set
+morekeywords=[2]{vector,stack,queue,priority\_queue,pair,set,map,multiset,unordered_map},
 keywordstyle=\bfseries\color{Blue1},
+keywordstyle=[2]\bfseries\color{TealBlue!70!Black},
 commentstyle=\itshape\color{Red4},
 stringstyle=\itshape\color{Green4},
 }

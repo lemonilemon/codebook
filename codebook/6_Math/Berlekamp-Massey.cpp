@@ -12,7 +12,7 @@ vector<T> BerlekampMassey(const vector<T> &output) {
     }
     vector<T> o(i - f - 1);
     T k = -d[i] / d[f];
-    o.pb(-k);
+    o.emplace_back(-k);
     for (T x : he) o.emplace_back(x * k);
     o.resize(max(o.size(), me.size()));
     for (int j = 0; j < me.size(); ++j) o[j] += me[j];

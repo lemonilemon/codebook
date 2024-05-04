@@ -1,9 +1,9 @@
 #include "Default_code.cpp"
 pdd Minimum_Enclosing_Circle(vector<pdd> dots, double &r) {
   pdd cent;
-  random_shuffle(ALL(dots));
+  random_shuffle(all(dots));
   cent = dots[0], r = 0;
-  for (int i = 1; i < SZ(dots); ++i) 
+  for (int i = 1; i < (int)dots.size(); ++i) 
     if (abs(dots[i] - cent) > r) {
       cent = dots[i], r = 0;
       for (int j = 0; j < i; ++j)

@@ -8,6 +8,6 @@ void build_voronoi_line(int n, pll *arr) {
     for (auto e : tool.head[i]) {
       int u = tool.oidx[i], v = tool.oidx[e.id];
       pll m = (arr[v] + arr[u]) / 2LL, d = perp(arr[v] - arr[u]);
-      vec[u].pb(Line(m, m + d));
+      vec[u].emplace_back(Line(m, m + d));
     }
 }
