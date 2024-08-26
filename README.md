@@ -1,4 +1,4 @@
-# RngBased
+# EqualUEqual
 Codebook of NTU EqualUEqual forked from RngBased forked from 8BQube
 
 [Overview](./codebook/overview.md)  
