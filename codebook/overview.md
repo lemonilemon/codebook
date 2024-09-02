@@ -12,6 +12,7 @@
 |BCC Vertex|None|[2_Graph/BCC_Vertex.cpp](2_Graph/BCC_Vertex.cpp)|BCC|8BQube||
 |MinimumMeanCycle|None|[2_Graph/MinimumMeanCycle.cpp](2_Graph/MinimumMeanCycle.cpp)|MinimumMeanCycle|LittleCube||
 |MaximumCliqueDyn|None|[2_Graph/Maximum_Clique_Dyn.cpp](2_Graph/Maximum_Clique_Dyn.cpp)|Maximum_Clique_Dyn|8BQube||
+|DominatorTree|None|[2_Graph/Dominator_Tree.cpp](2_Graph/Dominator_Tree.cpp)|DominatorTree|8BQube||
 |DMST(slow)|None|[2_Graph/Minimum_Arborescence.cpp](2_Graph/Minimum_Arborescence.cpp)|DMST|8BQube||
 |DMST|None|[2_Graph/DMST.cpp](2_Graph/DMST.cpp)|DMST|kactl||
 |VizingTheorem|None|[2_Graph/Vizing.cpp](2_Graph/Vizing.cpp)|Vizing|LittleCube||

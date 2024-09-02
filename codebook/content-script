@@ -11,6 +11,7 @@
 + MinimumMeanCycle,   	None,   2_Graph/MinimumMeanCycle.cpp, 		MinimumMeanCycle, 	true,	LittleCube,
 + MaximumCliqueDyn,		None,   2_Graph/Maximum_Clique_Dyn.cpp,		Maximum_Clique_Dyn,	true,	8BQube,
 + MinimumSteinerTree,	None,   2_Graph/MinimumSteinerTree.cpp, 	MinimumSteinerTree, false,	8BQube,
++ DominatorTree,	    None,	2_Graph/Dominator_Tree.cpp,	        DominatorTree,	    true,	8BQube,
 + DMST(slow),			None,   2_Graph/Minimum_Arborescence.cpp,	DMST, 				true,	8BQube,
 + DMST,   				None,   2_Graph/DMST.cpp, 					DMST, 				true,	kactl,
 + VizingTheorem,		None,   2_Graph/Vizing.cpp, 				Vizing, 			true,	LittleCube,
