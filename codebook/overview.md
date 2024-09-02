@@ -85,6 +85,7 @@
 |Basic|None|[8_Geometry/Default_code.cpp](8_Geometry/Default_code.cpp)|Default|8BQube||
 |ConvexHull|None|[8_Geometry/Convex_hull.cpp](8_Geometry/Convex_hull.cpp)||8BQube||
 |SortByAngle|None|[8_Geometry/Polar_Angle_Sort.cpp](8_Geometry/Polar_Angle_Sort.cpp)||8BQube||
+|Formulas|[8_Geometry/Formulas.tex](8_Geometry/Formulas.tex)|None|Formulas in geometry|8BQube||
 |TriangleHearts|None|[8_Geometry/Heart.cpp](8_Geometry/Heart.cpp)||8BQube||
 |PointSegmentDist|None|[8_Geometry/PointSegDist.cpp](8_Geometry/PointSegDist.cpp)||8BQube||
 |PointInCircle|None|[8_Geometry/point_in_circle.cpp](8_Geometry/point_in_circle.cpp)||8BQube||
@@ -105,7 +106,6 @@
 |RotatingSweepLine|None|[8_Geometry/rotatingSweepLine.cpp](8_Geometry/rotatingSweepLine.cpp)||8BQube||
 |DelaunayTriangulation|None|[8_Geometry/DelaunayTriangulation.cpp](8_Geometry/DelaunayTriangulation.cpp)||8BQube||
 |VonoroiDiagram|None|[8_Geometry/Triangulation_Vonoroi.cpp](8_Geometry/Triangulation_Vonoroi.cpp)||8BQube||
-|Formulas|[8_Geometry/Formulas.tex](8_Geometry/Formulas.tex)|None|Formulas in geometry|8BQube||
 ## Misc
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |

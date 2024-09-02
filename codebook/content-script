@@ -88,6 +88,7 @@
 + Basic,				None,	8_Geometry/Default_code.cpp,			Default,	true,	8BQube,
 + ConvexHull,			None,	8_Geometry/Convex_hull.cpp,				,			true,	8BQube,
 + SortByAngle,			None,	8_Geometry/Polar_Angle_Sort.cpp,		,			true,	8BQube,
++ Formulas,				8_Geometry/Formulas.tex,				None,				Formulas in geometry,				true,	8BQube,
 + TriangleHearts,		None,	8_Geometry/Heart.cpp,					,			true,	8BQube,
 + PointSegmentDist,		None,	8_Geometry/PointSegDist.cpp,			,			true,	8BQube,
 + PointInCircle,		None,	8_Geometry/point_in_circle.cpp,			,			true,	8BQube,
@@ -113,7 +114,6 @@
 + 3DBasic,				None,	8_Geometry/3Dpoint.cpp,					,			false,	8BQube,
 + 3DConvexHull,			None,	8_Geometry/Convexhull3D.cpp,            ,			false,	8BQube,
 + 3DConeDistance,		None,	8_Geometry/3DConeDist.cpp,	            ,  			false,	LittleCube,
-+ Formulas,				8_Geometry/Formulas.tex,				None,				Formulas in geometry,				true,	8BQube,
 
 - Misc
 + MoAlgoWithModify,		None,	9_Else/Mos_Algorithm_With_modification.cpp,		$O(N^{5/3})$,	true,	8BQube,
