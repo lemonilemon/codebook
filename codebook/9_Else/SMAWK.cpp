@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 int opt[N];
 ll A(int x, int y); // target func
 void smawk(vector<int> &r, vector<int> &c);

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 #define rep(i, l, r) for (int i = (l); i <= (r); ++i)
 struct WeightGraph { // 1-based
   struct edge {

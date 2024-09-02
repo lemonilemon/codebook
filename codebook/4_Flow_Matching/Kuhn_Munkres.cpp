@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct KM { // 0-base
   ll w[N][N], hl[N], hr[N], slk[N];
   int fl[N], fr[N], pre[N], qu[N], ql, qr, n;

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 // O(p^k + log^2 n), pk = p^k
 ll prod[MAXP];
 ll fac_no_p(ll n, ll p, ll pk) {

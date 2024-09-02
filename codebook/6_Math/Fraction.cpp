@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct fraction {
   ll n, d;
   fraction(const ll &_n=0, const ll &_d=1): n(_n), d(_d) {

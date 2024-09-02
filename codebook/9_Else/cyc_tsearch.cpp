@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 /* bool pred(int a, int b);
 f(0) ~ f(n - 1) is a cyclic-shift U-function
 return idx s.t. pred(x, idx) is false forall x*/

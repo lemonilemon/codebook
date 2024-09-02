@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 // a is convex a[i+1]-a[i] <= a[i+2]-a[i+1]
 vector<int> min_plus_convolution(vector<int> &a, vector<int> &b) {
   int n = (int)a.size(), m = (int)b.size();

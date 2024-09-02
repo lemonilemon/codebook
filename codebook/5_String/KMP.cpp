@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 int KMP(string s, string t) {
   t = " "s + t; // consistency with ACa
   int n = t.size(), ans = 0;

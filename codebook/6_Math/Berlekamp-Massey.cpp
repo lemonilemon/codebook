@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 template <typename T>
 vector<T> BerlekampMassey(const vector<T> &output) {
   vector<T> d(output.size() + 1), me, he;

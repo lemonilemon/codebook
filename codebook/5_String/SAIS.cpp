@@ -1,5 +1,5 @@
-#include "common.h"
-namespace sfx {
+#include "include/common.h"
+namespace SuffixArray {
 bool _t[N * 2];
 int SA[N * 2], H[N], RA[N];
 int _s[N * 2], _c[N * 2], x[N], _p[N], _q[N * 2];

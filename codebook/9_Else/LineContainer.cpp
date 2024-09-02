@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 
 struct Line {
   mutable ll k, m, p;

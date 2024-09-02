@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 vector<int> tre[N];
 bool cmp(int a, int b){ return in[a] < in[b]; }
 void add_edge(int a, int b){

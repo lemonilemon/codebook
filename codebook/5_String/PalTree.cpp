@@ -1,5 +1,5 @@
-#include "common.h"
-struct palindromic_tree {
+#include "include/common.h"
+struct PalindromicTree {
   struct node {
     int next[26], fail, len;
     int cnt, num; // cnt: appear times, num: number of
@@ -11,7 +11,7 @@ struct palindromic_tree {
   vector<node> St;
   vector<char> s;
   int last, n;
-  palindromic_tree() : St(2), last(1), n(0) {
+  PalindromicTree() : St(2), last(1), n(0) {
     St[0].fail = 1, St[1].len = -1, s.emplace_back(-1);
   }
   inline void clear() {

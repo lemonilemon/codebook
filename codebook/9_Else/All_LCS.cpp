@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 void all_lcs(string s, string t) { // 0-base
   vector<int> h((int)t.size());
   iota(all(h), 0);

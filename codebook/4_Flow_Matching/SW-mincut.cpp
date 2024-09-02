@@ -1,34 +1,36 @@
-#include "common.h"
-#undef INF
-struct SW{ // global min cut, O(V^3)
-  #define REP for (int i = 0; i < n; ++i)
-  static const int MXN = 514, INF = 2147483647;
-  int vst[MXN], edge[MXN][MXN], wei[MXN];
+#include "include/common.h"
+struct StoerWagner { // O(V^3), is it O(VE + V log V)?
+  int vst[N], edge[N][N], wei[N];
   void init(int n) {
-    REP fill_n(edge[i], n, 0);
+    for (int i = 0; i < n; ++i) fill_n(edge[i], n, 0);
   }
-  void addEdge(int u, int v, int w){
-    edge[u][v] += w; edge[v][u] += w;
+  void addEdge(int u, int v, int w) {
+    edge[u][v] += w;
+    edge[v][u] += w;
   }
-  int search(int &s, int &t, int n){
+  int search(int &s, int &t, int n) {
     fill_n(vst, n, 0), fill_n(wei, n, 0);
     s = t = -1;
     int mx, cur;
     for (int j = 0; j < n; ++j) {
       mx = -1, cur = 0;
-      REP if (wei[i] > mx) cur = i, mx = wei[i];
+      for (int i = 0; i < n; ++i)
+        if (wei[i] > mx) cur = i, mx = wei[i];
       vst[cur] = 1, wei[cur] = -1;
-      s = t; t = cur;
-      REP if (!vst[i]) wei[i] += edge[cur][i];
+      s = t;
+      t = cur;
+      for (int i = 0; i < n; ++i)
+        if (!vst[i]) wei[i] += edge[cur][i];
     }
     return mx;
   }
   int solve(int n) {
     int res = INF;
-    for (int x, y; n > 1; n--){
+    for (int x, y; n > 1; n--) {
       res = min(res, search(x, y, n));
-      REP edge[i][x] = (edge[x][i] += edge[y][i]);
-      REP {
+      for (int i = 0; i < n; ++i)
+        edge[i][x] = (edge[x][i] += edge[y][i]);
+      for (int i = 0; i < n; ++i) {
         edge[y][i] = edge[n - 1][i];
         edge[i][y] = edge[i][n - 1];
       } // edge[y][y] = 0;

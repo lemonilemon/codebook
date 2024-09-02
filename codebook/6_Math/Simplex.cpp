@@ -1,11 +1,9 @@
-#include "common.h"
-// using N + 2M variables
-const int mxM = 25;
-const int mxN = 25 + 2 * mxM;
+#include "include/common.h"
+// n variable, m constraints, M >= n + 2m 
 struct simplex {
   const double inf = 1 / .0, eps = 1e-9;
-  int n, m, k, var[mxN], inv[mxN], art[mxN];
-  double A[mxM][mxN], B[mxM], x[mxN];
+  int n, m, k, var[N], inv[N], art[N];
+  double A[M][N], B[M], x[N];
   void init(int _n) { n = _n, m = 0; }
   void equation(vector<double> a, double b) {
     for (int i = 0; i < n; i++) A[m][i] = a[i];
@@ -46,7 +44,7 @@ struct simplex {
     };
     k = 1;
     for (int i = 0; i < n; i++) A[m][i] = -c[i];
-    fill(A[m + 1], A[m + 1] + mxN, 0.0);
+    fill(A[m + 1], A[m + 1] + N, 0.0);
     for (int i = 0; i <= m + 1; i++)
       fill(A[i] + n, A[i] + n + m + 2, 0.0),
         var[i] = n + i, A[i][n + i] = 1;

@@ -1,5 +1,5 @@
-#include "common.h"
-struct Clique_Cover { // 0-base, O(n2^n)
+#include "include/common.h"
+struct CliqueCover { // 0-base, O(n2^n)
   int co[1 << N], n, E[N];
   int dp[1 << N];
   void init(int _n) {

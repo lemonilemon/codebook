@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct BronKerbosch { // 1-base
   int n, a[N], g[N][N];
   int S, all[N][N], some[N][N], none[N][N];

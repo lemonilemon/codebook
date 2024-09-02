@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 namespace Vizing { // Edge coloring
                    // G: coloring adjM
 int C[N][N], G[N][N];

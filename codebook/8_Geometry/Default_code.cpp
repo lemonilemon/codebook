@@ -1,32 +1,33 @@
-#include "common.h"
+#include "include/common.h"
 typedef pair<pdd, pdd> Line;
 struct Cir{ pdd O; double R; };
 const double eps = 1e-8;
-pdd operator+(pdd a, pdd b)
-{ return pdd(a.F + b.S, a.S + b.S); }
-pdd operator-(pdd a, pdd b)
-{ return pdd(a.F - b.S, a.S - b.S); }
-pdd operator*(pdd a, double b)
-{ return pdd(a.F * b, a.S * b); }
-pdd operator/(pdd a, double b)
+pll operator+(pll a, pll b)
+{ return pll(a.F + b.F, a.S + b.S); }
+pll operator-(pll a, pll b)
+{ return pll(a.F - b.F, a.S - b.S); }
+pll operator-(pll a)
+{ return pll(-a.F, -a.S); }
+pll operator*(pll a, ll b)
+{ return pll(a.F * b, a.S * b); }
+pdd operator/(pll a, double b)
 { return pdd(a.F / b, a.S / b); }
-double dot(pdd a, pdd b)
+ll dot(pll a, pll b)
 { return a.F * b.F + a.S * b.S; }
-double cross(pdd a, pdd b)
+ll cross(pll a, pll b)
 { return a.F * b.S - a.S * b.F; }
-double abs2(pdd a)
+ll abs2(pll a)
 { return dot(a, a); }
-double abs(pdd a)
+double abs(pll a)
 { return sqrt(dot(a, a)); }
-int sign(double a)
+int sign(ll a)
 { return fabs(a) < eps ? 0 : a > 0 ? 1 : -1; }
-int ori(pdd a, pdd b, pdd c)
+int ori(pll a, pll b, pll c)
 { return sign(cross(b - a, c - a)); }
-bool collinearity(pdd p1, pdd p2, pdd p3)
+bool collinearity(pll p1, pll p2, pll p3)
 { return sign(cross(p1 - p3, p2 - p3)) == 0; }
-bool btw(pdd p1, pdd p2, pdd p3) {
-  if (!collinearity(p1, p2, p3)) return 0;
-  return sign(dot(p1 - p3, p2 - p3)) <= 0;
+bool btw(pll a, pll b, pll c) {
+  return collinearity(a, b, c) && sign(dot(a - c, b - c)) <= 0;
 }
 bool seg_intersect(pdd p1, pdd p2, pdd p3, pdd p4) {
   int a123 = ori(p1, p2, p3);

@@ -1,6 +1,6 @@
 #include "Default_code.cpp"
 using Line = pair<pll, pll>;
-struct lineCmp {
+struct lineCmp { // coordinates should be even!
   bool operator()(Line l1, Line l2) const {
     int X =
       (max(l1.F.F, l2.F.F) + min(l1.S.F, l2.S.F)) / 2;

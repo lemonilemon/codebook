@@ -1,5 +1,5 @@
-#include "common.h"
-struct zhu_liu { // O(VE)
+#include "include/common.h"
+struct DMST { // O(VE)
   struct edge {
     int u, v;
     ll w;

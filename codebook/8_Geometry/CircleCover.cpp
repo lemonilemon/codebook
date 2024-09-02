@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 const int N = 1021;
 struct CircleCover {
   int C; 

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 /* x: a[j], y: a[j + (L >> 1)]
 or: (y += x * op), and: (x += y * op)
 xor: (x, y = (x + y) * op, (x - y) * op)
