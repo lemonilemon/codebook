@@ -1,3 +1,4 @@
+#include "common.h"
 struct node {
   int data, sz;
   node *l, *r;

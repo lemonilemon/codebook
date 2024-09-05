@@ -1,3 +1,4 @@
+#include "common.h"
 struct Heavy_light_Decomposition { // 1-base
   int n, ulink[N], deep[N], mxson[N], w[N], pa[N];
   int t, pl[N], data[N], dt[N], bln[N], edge[N], et;

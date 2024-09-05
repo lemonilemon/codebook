@@ -1,3 +1,4 @@
+#include "common.h"
 struct Cent_Dec { // 1-base
   vector<pll> G[N];
   pll info[N]; // store info. of itself
