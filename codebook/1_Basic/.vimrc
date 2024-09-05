@@ -4,3 +4,4 @@ ino {<CR> {<CR>}<C-o>O
 ino jj <esc>
 ino jk <esc> 
 map <F7> :w<CR>:!g++ "%" -std=c++17 -Wall -Wextra -Wshadow -Wconversion -fsanitize=address,undefined -g && ./a.out<CR>
+ca Hash w !cpp -dD -P -fpreprocessed \| tr -d "[:space:]" \| md5sum \| cut -c-6
