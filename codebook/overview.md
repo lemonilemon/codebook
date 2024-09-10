@@ -10,6 +10,7 @@
 |:-  |:- |:- |:-         |:-    |:-    |
 |2SAT/SCC|None|[2_Graph/2SAT.cpp](2_Graph/2SAT.cpp)|SCC|victor.gao?||
 |BCC Vertex|None|[2_Graph/BCC_Vertex.cpp](2_Graph/BCC_Vertex.cpp)|BCC|8BQube||
+|VirtualTree|None|[2_Graph/Virtual_Tree.cpp](2_Graph/Virtual_Tree.cpp)|VirtualTree|?||
 |MinimumMeanCycle|None|[2_Graph/MinimumMeanCycle.cpp](2_Graph/MinimumMeanCycle.cpp)|MinimumMeanCycle|LittleCube||
 |MaximumCliqueDyn|None|[2_Graph/Maximum_Clique_Dyn.cpp](2_Graph/Maximum_Clique_Dyn.cpp)|Maximum_Clique_Dyn|8BQube||
 |DominatorTree|None|[2_Graph/Dominator_Tree.cpp](2_Graph/Dominator_Tree.cpp)|DominatorTree|8BQube||

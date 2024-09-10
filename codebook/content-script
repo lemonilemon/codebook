@@ -8,6 +8,7 @@
 - Graph
 + 2SAT/SCC,     		None,   2_Graph/2SAT.cpp,   				SCC,    			true,	victor.gao?,
 + BCC Vertex,   		None,   2_Graph/BCC_Vertex.cpp, 			BCC,    			true,	8BQube,
++ VirtualTree,	        None,	2_Graph/Virtual_Tree.cpp,	        VirtualTree,		true,	?,
 + MinimumMeanCycle,   	None,   2_Graph/MinimumMeanCycle.cpp, 		MinimumMeanCycle, 	true,	LittleCube,
 + MaximumCliqueDyn,		None,   2_Graph/Maximum_Clique_Dyn.cpp,		Maximum_Clique_Dyn,	true,	8BQube,
 + MinimumSteinerTree,	None,   2_Graph/MinimumSteinerTree.cpp, 	MinimumSteinerTree, false,	8BQube,
