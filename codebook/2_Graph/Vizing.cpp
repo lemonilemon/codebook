@@ -7,7 +7,7 @@ void clear(int n) {
     for (int j = 0; j <= n; j++) C[i][j] = G[i][j] = 0;
   }
 }
-void solve(vector<pii> &E, int n, int m) {
+void solve(vector<pii> &E, int n) {
   int X[n] = {}, a;
   auto update = [&](int u) {
     for (X[u] = 1; C[u][X[u]]; X[u]++);

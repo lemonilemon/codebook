@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 // Divides into multiple triangle, and sum up
 const double PI = acos(-1);
 double _area(pdd pa, pdd pb, double r) {

@@ -1,12 +1,13 @@
-#include "include/common.h"
-const int N = 1021;
+#include "GeometryDefaultFloat.h"
+#include "Intersection_of_two_circles.cpp"
+// N ~= 1000
 struct CircleCover {
   int C; 
   Cir c[N];
   bool g[N][N], overlap[N][N];
   // Area[i] : area covered by at least i circles
   double Area[ N ];
-  void init(int _C){ C = _C;}
+  void init(int _c){ C = _c;}
   struct Teve {
     pdd p; double ang; int add;
     Teve() {}
@@ -41,8 +42,8 @@ struct CircleCover {
         if(i != j && g[i][j]) {
           pdd aa, bb;
           CCinter(c[i], c[j], aa, bb);
-          double A = atan2(aa.Y - c[i].O.Y, aa.X - c[i].O.X);
-          double B = atan2(bb.Y - c[i].O.Y, bb.X - c[i].O.X);
+          double A = atan2(aa.S - c[i].O.S, aa.F - c[i].O.F);
+          double B = atan2(bb.S - c[i].O.S, bb.F - c[i].O.F);
           eve[E++] = Teve(bb, B, 1), eve[E++] = Teve(aa, A, -1);
           if(B > A) ++cnt;
         }

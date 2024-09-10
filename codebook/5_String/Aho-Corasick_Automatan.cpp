@@ -7,7 +7,7 @@ struct AhoCorasick { // N: sum of length
   int idx = 0, t = -1;
   vector<int> E[N], q;
   pii o[N];
-  int insert(string &s, int t) {
+  int insert(string &s) {
     int j = 0;
     for (int i = 0; i < (int)s.size(); i++) {
       if (!ch[j][s[i] - base])
@@ -28,7 +28,7 @@ struct AhoCorasick { // N: sum of length
   void build() {
     int k = -1;
     q.emplace_back(0);
-    while (++k < q.size()) {
+    while (++k < (int)q.size()) {
       int u = q[k];
       for (int v = 0; v < sigma; v++) {
         if (ch[u][v]) {

@@ -33,6 +33,8 @@
 
 \titlespacing\section{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
 \titlespacing\subsection{0pt}{0pt plus 2pt minus 2pt}{0pt plus 2pt minus 2pt}
+\renewcommand*{\thesubsection}{\thesection\Alph{subsection}}
+\setcounter{section}{-1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -76,8 +78,10 @@ breakatwhitespace=false,							% sets if automatic breaks should only happen at 
 escapeinside={\%*}{*)},							% if you want to add a comment within your code
 morekeywords={constexpr,ll,pii,pdd,pll},									% if you want to add more keywords to the set
 morekeywords=[2]{vector,stack,queue,priority\_queue,pair,set,map,multiset,unordered_map},
+morekeywords=[3]{N,M,INF},
 keywordstyle=\bfseries\color{Blue1},
 keywordstyle=[2]\bfseries\color{TealBlue!70!Black},
+keywordstyle=[3]\bfseries\color{Black},
 commentstyle=\itshape\color{Red4},
 stringstyle=\itshape\color{Green4},
 }

@@ -1,4 +1,5 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
+#include "Heart.cpp"
 pdd Minimum_Enclosing_Circle(vector<pdd> dots, double &r) {
   pdd cent;
   random_shuffle(all(dots));
@@ -12,7 +13,8 @@ pdd Minimum_Enclosing_Circle(vector<pdd> dots, double &r) {
           r = abs(dots[i] - cent);
           for(int k = 0; k < j; ++k)
             if(abs(dots[k] - cent) > r)
-              cent = excenter(dots[i], dots[j], dots[k], r);
+              cent = excenter(dots[i], dots[j], dots[k]),
+              r = abs(cent - dots[i]);
         }
     }
   return cent;

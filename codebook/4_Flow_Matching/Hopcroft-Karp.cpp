@@ -23,7 +23,7 @@ struct HopcroftKarp { // 0-based, return btoa to get matching
       cur.clear();
       for (int a : btoa)
         if (a != -1) A[a] = -1;
-      for (int a = 0; a < g.size(); a++)
+      for (int a = 0; a < (int)g.size(); a++)
         if (A[a] == 0) cur.push_back(a);
       for (int lay = 1;; lay++) {
         bool islast = 0;
@@ -43,7 +43,7 @@ struct HopcroftKarp { // 0-based, return btoa to get matching
         for (int a : next) A[a] = lay;
         cur.swap(next);
       }
-      for (int a = 0; a < g.size(); a++)
+      for (int a = 0; a < (int)g.size(); a++)
         res += dfs(a, 0, g, btoa, A, B);
     }
   }

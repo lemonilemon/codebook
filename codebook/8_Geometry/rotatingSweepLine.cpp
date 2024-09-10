@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 void rotatingSweepLine(vector<pii> &ps) {
   int n = (int)ps.size(), m = 0;
   vector<int> id(n), pos(n);

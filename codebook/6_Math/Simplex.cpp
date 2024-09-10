@@ -1,5 +1,5 @@
 #include "include/common.h"
-// n variable, m constraints, M >= n + 2m 
+// n variable, m constraints, M >= n + 2m
 struct simplex {
   const double inf = 1 / .0, eps = 1e-9;
   int n, m, k, var[N], inv[N], art[N];
@@ -21,9 +21,8 @@ struct simplex {
   }
   double phase(int p) {
     while (true) {
-      int in = min_element(
-                 A[m + p], A[m + p] + n + m + k + 1) -
-        A[m + p];
+      int in = (int)(min_element(A[m + p],
+        A[m + p] + n + m + k + 1) - A[m + p]);
       if (A[m + p][in] >= -eps) break;
       double bx = inf;
       int piv = -1;

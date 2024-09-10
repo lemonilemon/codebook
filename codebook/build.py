@@ -39,6 +39,7 @@ with open("content-script") as script:
                 except FileNotFoundError:
                     print(f"File {args[2]} is missing, exiting.")
                     exit()
+                os.system(f"g++ -S -std=c++20 {args[2]} -Wall -Wextra -Wshadow -Wconversion -I . -o a.out")
                 print(f"Parsed file {args[2]}")
                 
             pattern = ""

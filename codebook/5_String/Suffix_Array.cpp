@@ -5,7 +5,7 @@ struct SuffixArray {
   // sa: order, rk[i]: pos of s[i..],
   // lcp[i]: LCP of sa[i], sa[i-1]
   void SA(string s) { // remember to append '\1'
-    int n = s.size();
+    int n = (int)s.size();
     sa.resize(n), cnt.resize(n);
     rk.resize(n), tmp.resize(n);
     iota(all(sa), 0);
@@ -34,7 +34,7 @@ struct SuffixArray {
     }
   }
   void LCP(string s) {
-    int n = s.size(), k = 0;
+    int n = (int)s.size(), k = 0;
     lcp.resize(n);
     for (int i = 0; i < n; i++)
       if (rk[i] == 0) lcp[rk[i]] = 0;

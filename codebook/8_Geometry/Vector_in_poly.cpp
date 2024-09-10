@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 // ori(a, b, c) >= 0, valid: "strict" angle from a-b to a-c
 bool btwangle(pll a, pll b, pll c, pll p, int strict) {
   return ori(a, b, p) >= strict && ori(a, p, c) >= strict;

@@ -1,4 +1,5 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
+#include "DelaunayTriangulation.cpp"
 // all coord. is even, you may want to call halfPlaneInter after then
 vector<vector<Line>> vec;
 void build_voronoi_line(int n, pll *arr) {

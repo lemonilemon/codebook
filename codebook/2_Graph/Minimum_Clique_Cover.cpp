@@ -1,4 +1,5 @@
 #include "include/common.h"
+#include "7_Polynomial/Fast_Walsh_Transform.cpp"
 struct CliqueCover { // 0-base, O(n2^n)
   int co[1 << N], n, E[N];
   int dp[1 << N];
@@ -21,7 +22,7 @@ struct CliqueCover { // 0-base, O(n2^n)
     }
     for (int i = 0; i < (1 << n); ++i)
       co[i] = (co[i] & i) == i;
-    fwt(co, 1 << n, 1);
+    fwt(co, 1 << n, 1); // needs FWHT
     for (int ans = 1; ans < n; ++ans) {
       int sum = 0; // probabilistic
       for (int i = 0; i < (1 << n); ++i)

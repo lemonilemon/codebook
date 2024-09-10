@@ -1,6 +1,9 @@
 #include "include/common.h"
-typedef pair<pdd, pdd> Line;
+#ifndef GEO_DEFAULT_H
+#define GEO_DEFAULT_H
+typedef pair<pll, pll> Line;
 struct Cir{ pdd O; double R; };
+const double pi = acos(-1);
 const double eps = 1e-8;
 pll operator+(pll a, pll b)
 { return pll(a.F + b.F, a.S + b.S); }
@@ -29,6 +32,13 @@ bool collinearity(pll p1, pll p2, pll p3)
 bool btw(pll a, pll b, pll c) {
   return collinearity(a, b, c) && sign(dot(a - c, b - c)) <= 0;
 }
+bool seg_strict_intersect(pdd p1, pdd p2, pdd p3, pdd p4) {
+  int a123 = ori(p1, p2, p3);
+  int a124 = ori(p1, p2, p4);
+  int a341 = ori(p3, p4, p1);
+  int a342 = ori(p3, p4, p2);
+  return a123 * a124 < 0 && a341 * a342 < 0;
+}
 bool seg_intersect(pdd p1, pdd p2, pdd p3, pdd p4) {
   int a123 = ori(p1, p2, p3);
   int a124 = ori(p1, p2, p4);
@@ -54,3 +64,4 @@ pdd linearTransformation(pdd p0, pdd p1, pdd q0, pdd q1, pdd r) {
 	pdd dp = p1 - p0, dq = q1 - q0, num(cross(dp, dq), dot(dp, dq));
 	return q0 + pdd(cross(r - p0, num), dot(r - p0, num)) / abs2(dp);
 } // from line p0--p1 to q0--q1, apply to r 
+#endif

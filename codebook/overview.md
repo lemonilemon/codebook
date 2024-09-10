@@ -35,6 +35,7 @@
 ## Data Struture
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |
+|Treap|None|[3_Data_Structure/Treap.cpp](3_Data_Structure/Treap.cpp)|Treap|LittleCube||
 |LinkCutTree|None|[3_Data_Structure/link_cut_tree.cpp](3_Data_Structure/link_cut_tree.cpp)|LinkCutTree|victor.gao||
 ## String
 |name|tex|cpp|description|source|tested|
@@ -83,7 +84,7 @@
 ## Geometry
 |name|tex|cpp|description|source|tested|
 |:-  |:- |:- |:-         |:-    |:-    |
-|Basic|None|[8_Geometry/Default_code.cpp](8_Geometry/Default_code.cpp)|Default|8BQube||
+|Basic|None|[8_Geometry/GeometryDefault.cpp](8_Geometry/GeometryDefault.cpp)|Default|8BQube||
 |ConvexHull|None|[8_Geometry/Convex_hull.cpp](8_Geometry/Convex_hull.cpp)||8BQube||
 |SortByAngle|None|[8_Geometry/Polar_Angle_Sort.cpp](8_Geometry/Polar_Angle_Sort.cpp)||8BQube||
 |Formulas|[8_Geometry/Formulas.tex](8_Geometry/Formulas.tex)|None|Formulas in geometry|8BQube||
@@ -97,6 +98,7 @@
 |LineConvexIntersect|None|[8_Geometry/Intersection_of_line_and_convex.cpp](8_Geometry/Intersection_of_line_and_convex.cpp)||8BQube||
 |CircIntersectCirc|None|[8_Geometry/Intersection_of_two_circles.cpp](8_Geometry/Intersection_of_two_circles.cpp)||8BQube||
 |PolyIntersectCirc|None|[8_Geometry/Intersection_of_polygon_and_circle.cpp](8_Geometry/Intersection_of_polygon_and_circle.cpp)||8BQube||
+|PolyUnion|None|[8_Geometry/PolyUnion.cpp](8_Geometry/PolyUnion.cpp)||8BQube||
 |MinkowskiSum|None|[8_Geometry/Minkowski_Sum.cpp](8_Geometry/Minkowski_Sum.cpp)||8BQube||
 |MinMaxEnclosingRect|None|[8_Geometry/minMaxEnclosingRectangle.cpp](8_Geometry/minMaxEnclosingRectangle.cpp)||8BQube||
 |MinEnclosingCircle|None|[8_Geometry/Minimum_Enclosing_Circle.cpp](8_Geometry/Minimum_Enclosing_Circle.cpp)||8BQube||

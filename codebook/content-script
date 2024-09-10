@@ -39,6 +39,7 @@
 + LeftistTree,			None,	3_Data_Structure/Leftist_Tree.cpp,		LeftistTree,		false,	8BQube,
 + HLD,					None,	3_Data_Structure/Heavy_light_Decomposition.cpp, HLD,		false,	8BQube,
 + CentroidDec,			None,	3_Data_Structure/Centroid_Decomposition.cpp, CentroidDec,	false, 	8BQube,
++ Treap,			    None,	3_Data_Structure/Treap.cpp,		        Treap,		        true,	LittleCube,
 + LinkCutTree,			None,	3_Data_Structure/link_cut_tree.cpp,		LinkCutTree,		true,	victor.gao,
 
 - String
@@ -86,7 +87,7 @@
 + NewtonMethod+MiscGF,	7_Polynomial/Newton.tex,	None,				,			true,	LittleCube,
 
 - Geometry
-+ Basic,				None,	8_Geometry/Default_code.cpp,			Default,	true,	8BQube,
++ Basic,				None,	8_Geometry/GeometryDefault.cpp,			Default,	true,	8BQube,
 + ConvexHull,			None,	8_Geometry/Convex_hull.cpp,				,			true,	8BQube,
 + SortByAngle,			None,	8_Geometry/Polar_Angle_Sort.cpp,		,			true,	8BQube,
 + Formulas,				8_Geometry/Formulas.tex,				None,				Formulas in geometry,				true,	8BQube,
@@ -100,7 +101,7 @@
 + LineConvexIntersect,	None,	8_Geometry/Intersection_of_line_and_convex.cpp,,	true,	8BQube,
 + CircIntersectCirc,	None,	8_Geometry/Intersection_of_two_circles.cpp,,		true,	8BQube,
 + PolyIntersectCirc,	None,	8_Geometry/Intersection_of_polygon_and_circle.cpp,,	true,	8BQube,
-+ PolyUnion,			None,	8_Geometry/PolyUnion.cpp,	not yet know usage,		false,	8BQube,
++ PolyUnion,			None,	8_Geometry/PolyUnion.cpp,	            ,		    true,	8BQube,
 + SegCutPolyArea,		None,	8_Geometry/PolyCut.cpp,	                ,			false,	8BQube,
 + MinkowskiSum,			None,	8_Geometry/Minkowski_Sum.cpp,			,			true,	8BQube,
 + MinMaxEnclosingRect,	None,	8_Geometry/minMaxEnclosingRectangle.cpp,,			true,	8BQube,
