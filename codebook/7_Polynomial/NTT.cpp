@@ -34,7 +34,7 @@ void calcrev(int n) {
 
 vector<base> NTT(vector<base> poly, bool inv) {
   base *w = (inv ? omega_ : omega);
-  int n = poly.size();
+  int n = (int)poly.size();
   for (int i = 0; i < n; i++)
     if (rev[i] > i) swap(poly[i], poly[rev[i]]);
 

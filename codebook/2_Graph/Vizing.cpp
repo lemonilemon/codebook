@@ -31,7 +31,7 @@ void solve(vector<pii> &E, int n) {
     return p;
   };
   for (int i = 1; i <= n; i++) X[i] = 1;
-  for (int t = 0; t < E.size(); t++) {
+  for (int t = 0; t < (int)E.size(); t++) {
     int u = E[t].first, v0 = E[t].second, v = v0,
         c0 = X[u], c = c0, d;
     vector<pii> L;

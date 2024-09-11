@@ -13,6 +13,7 @@
 |VirtualTree|None|[2_Graph/Virtual_Tree.cpp](2_Graph/Virtual_Tree.cpp)|VirtualTree|?||
 |MinimumMeanCycle|None|[2_Graph/MinimumMeanCycle.cpp](2_Graph/MinimumMeanCycle.cpp)|MinimumMeanCycle|LittleCube||
 |MaximumCliqueDyn|None|[2_Graph/Maximum_Clique_Dyn.cpp](2_Graph/Maximum_Clique_Dyn.cpp)|Maximum_Clique_Dyn|8BQube||
+|MinimumSteinerTree|None|[2_Graph/MinimumSteinerTree.cpp](2_Graph/MinimumSteinerTree.cpp)|MinimumSteinerTree|8BQube||
 |DominatorTree|None|[2_Graph/Dominator_Tree.cpp](2_Graph/Dominator_Tree.cpp)|DominatorTree|8BQube||
 |DMST(slow)|None|[2_Graph/Minimum_Arborescence.cpp](2_Graph/Minimum_Arborescence.cpp)|DMST|8BQube||
 |DMST|None|[2_Graph/DMST.cpp](2_Graph/DMST.cpp)|DMST|kactl||
@@ -117,8 +118,10 @@
 |MoAlgoOnTree|None|[9_Else/Mos_Algorithm_On_Tree.cpp](9_Else/Mos_Algorithm_On_Tree.cpp)||8BQube||
 |MoAlgoAdvanced|[9_Else/Mos_Algorithm.tex](9_Else/Mos_Algorithm.tex)|None||8BQube||
 |HilbertCurve|None|[9_Else/HilbertCurve.cpp](9_Else/HilbertCurve.cpp)|Mo's optimize|8BQube||
+|ManhattanMST|None|[9_Else/ManhattanMST.cpp](9_Else/ManhattanMST.cpp)||oToToT||
 |SternBrocotTree|[9_Else/SBTree.tex](9_Else/SBTree.tex)|None||LittleCube||
 |AllLCS|None|[9_Else/All_LCS.cpp](9_Else/All_LCS.cpp)||8BQube||
+|MatroidIntersection|[9_Else/Matroid.tex](9_Else/Matroid.tex)|None||8BQube||
 |SimulatedAnnealing|None|[9_Else/SimulatedAnnealing.cpp](9_Else/SimulatedAnnealing.cpp)||8BQube||
 |SMAWK|None|[9_Else/SMAWK.cpp](9_Else/SMAWK.cpp)||LittleCube|BZOJ 2739 https://darkbzoj.cc/problem/2739|
 |Python|None|[11_Python/misc.py](11_Python/misc.py)||LittleCube||
