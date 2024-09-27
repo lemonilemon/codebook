@@ -1,4 +1,5 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultInteger.h"
+#include "Polar_Angle_Sort.cpp"
 pll area_pair(Line a, Line b) 
 { return pll(cross(a.S - a.F, b.F - a.F), cross(a.S - a.F, b.S - a.F)); }
 bool isin(Line l0, Line l1, Line l2) {

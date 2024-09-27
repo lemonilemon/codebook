@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 cin >> n >> m;
 for (int i = 1, x; i <= n; ++i)
   cin >> x, p[x].set(i);

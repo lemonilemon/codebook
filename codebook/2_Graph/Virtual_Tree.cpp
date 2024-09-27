@@ -1,4 +1,5 @@
-#include "common.h"
+#include "include/common.h"
+// requires DFS io, lca, is_child
 vector<int> tre[N];
 bool cmp(int a, int b){ return in[a] < in[b]; }
 void add_edge(int a, int b){
@@ -13,7 +14,7 @@ void virtual_tree(vector<int> arr, int k){
   sort(arr.begin(), arr.end(), cmp);
   arr.resize(unique(arr.begin(), arr.end()) - arr.begin());
   for (auto i : arr){
-    while (!sta.empty() && !check_anc(sta.back(), i)) sta.pop_back();
+    while (!sta.empty() && !is_child(sta.back(), i)) sta.pop_back();
     if (!sta.empty()) add_edge(sta.back(), i);
     sta.push_back(i);
   }

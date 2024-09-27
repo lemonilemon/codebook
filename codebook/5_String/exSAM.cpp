@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 #define CNUM 26
 struct exSAM {
   int len[N * 2], link[N * 2]; // maxlength, suflink 

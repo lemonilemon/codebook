@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 /* x: a[j], y: a[j + (L >> 1)]
 or: (y += x * op), and: (x += y * op)
 xor: (x, y = (x + y) * op, (x - y) * op)
@@ -9,8 +9,8 @@ void fwt(int *a, int n, int op) { //or
       for (int j = i; j < i + (L >> 1); ++j)
         a[j + (L >> 1)] += a[j] * op;
 }
-const int N = 21;
-int f[N][1 << N], g[N][1 << N], h[N][1 << N], ct[1 << N];
+const int P = 21; // power of max N
+int f[P][1 << P], g[P][1 << P], h[P][1 << P], ct[1 << P];
 void subset_convolution(int *a, int *b, int *c, int L) {
   // c_k = \sum_{i | j = k, i & j = 0} a_i * b_j
   int n = 1 << L;

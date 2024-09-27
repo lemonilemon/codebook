@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct Q {
   ll p, q;
   Q go(Q b, ll d) { return {p + b.p*d, q + b.q*d}; }

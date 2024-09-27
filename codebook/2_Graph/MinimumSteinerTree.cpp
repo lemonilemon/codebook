@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct SteinerTree { // 0-base
   int n, dst[N][N], dp[1 << T][N], tdst[N];
   int vcst[N]; // the cost of vertexs

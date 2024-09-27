@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 #define MAXN 11
 int factorial[MAXN];
 inline void init(){

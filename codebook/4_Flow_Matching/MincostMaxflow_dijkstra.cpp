@@ -1,7 +1,7 @@
-#include "common.h"
+#include "include/common.h"
 struct MinCostMaxFlow { // 0-base
   struct Edge {
-    ll from, to, cap, flow, cost, rev; 
+    ll from, to, cap, flow, cost, rev;
   } *past[N];
   vector<Edge> G[N];
   int inq[N], n, s, t;
@@ -21,7 +21,8 @@ struct MinCostMaxFlow { // 0-base
       q.pop(), inq[u] = 0;
       for (auto &e : G[u]) {
         ll d2 = dis[u] + e.cost + pot[u] - pot[e.to];
-        relax(e.to, d2, min(up[u], e.cap - e.flow), &e);
+        relax(
+          e.to, d2, min(up[u], e.cap - e.flow), &e);
       }
     }
     return dis[t] != INF;
@@ -42,16 +43,20 @@ struct MinCostMaxFlow { // 0-base
       if (dis[u] != d) continue;
       for (auto &e : G[u]) {
         ll d2 = dis[u] + e.cost + pot[u] - pot[e.to];
-        relax(e.to, d2, min(up[u], e.cap - e.flow), &e);
+        relax(
+          e.to, d2, min(up[u], e.cap - e.flow), &e);
       }
     }
     return dis[t] != INF;
   }
-  void solve(int _s, int _t, ll &flow, ll &cost, bool neg = true) {
+  void solve(int _s, int _t, ll &flow, ll &cost,
+    bool neg = true) {
     s = _s, t = _t, flow = 0, cost = 0;
     if (neg) BellmanFord(), copy_n(dis, n, pot);
+    // do BellmanFord() if time isn't tight
     for (; Dijkstra(); copy_n(dis, n, pot)) {
-      for (int i = 0; i < n; ++i) dis[i] += pot[i] - pot[s];
+      for (int i = 0; i < n; ++i)
+        dis[i] += pot[i] - pot[s];
       flow += up[t], cost += up[t] * dis[t];
       for (int i = t; past[i]; i = past[i]->from) {
         auto &e = *past[i];
@@ -64,7 +69,9 @@ struct MinCostMaxFlow { // 0-base
     for (int i = 0; i < n; ++i) G[i].clear();
   }
   void add_edge(ll a, ll b, ll cap, ll cost) {
-    G[a].pb(Edge{a, b, cap, 0, cost, SZ(G[b])});
-    G[b].pb(Edge{b, a, 0, 0, -cost, SZ(G[a]) - 1});
+    G[a].emplace_back(
+      Edge{a, b, cap, 0, cost, (int)G[b].size()});
+    G[b].emplace_back(
+      Edge{b, a, 0, 0, -cost, (int)G[a].size() - 1});
   }
 };

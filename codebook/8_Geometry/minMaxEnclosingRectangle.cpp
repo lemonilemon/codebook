@@ -1,5 +1,5 @@
 #include "Convex_hull.cpp"
-const double INF = 1e18, qi = acos(-1) / 2 * 3;
+const double qi = acos(-1) / 2 * 3;
 pdd solve(vector<pll> &dots) {
 #define diff(u, v) (dots[u] - dots[v])
 #define vec(v) (dots[v] - dots[i])

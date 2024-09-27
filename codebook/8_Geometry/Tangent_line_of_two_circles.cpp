@@ -1,5 +1,5 @@
-#include "Default_code.cpp"
-vector<Line> go( const Cir& c1 , const Cir& c2 , int sign1 ){
+#include "GeometryDefaultFloat.h"
+vector<Line> go(Cir c1, Cir c2, int sign1) {
   // sign1 = 1 for outer tang, -1 for inter tang
   vector<Line> ret;
   double d_sq = abs2(c1.O - c2.O);
@@ -15,7 +15,7 @@ vector<Line> go( const Cir& c1 , const Cir& c2 , int sign1 ){
     pdd p1 = c1.O + n * c1.R;
     pdd p2 = c2.O + n * (c2.R * sign1);
     if (sign(p1.F - p2.F) == 0 and
-        sign(p1.S - p2.S) == 0)
+      sign(p1.S - p2.S) == 0)
       p2 = p1 + perp(c2.O - c1.O);
     ret.emplace_back(Line(p1, p2));
   }

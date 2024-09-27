@@ -1,3 +1,4 @@
+#include "GeometryDefaultFloat.h"
 template<class T>
 struct SweepLine {
   struct cmp {
@@ -18,20 +19,20 @@ struct SweepLine {
   bool slope_cmp(int a, int b) const {
     assert(a != -1);
     if (b == -1) return 0;
-    return sign(cross(base[a].Y - base[a].X, base[b].Y - base[b].X)) < 0;
+    return sign(cross(base[a].S - base[a].F, base[b].S - base[b].F)) < 0;
   }
   T get_y(int idx) const {
     if (idx == -1) return curQ;
     Line l = base[idx];
-    if (l.X.X == l.Y.X) return l.Y.Y;
-    return ((curTime - l.X.X) * l.Y.Y + (l.Y.X - curTime) * l.X.Y) / (l.Y.X - l.X.X);
+    if (l.F.F == l.S.F) return l.S.S;
+    return ((curTime - l.F.F) * l.S.S + (l.S.F - curTime) * l.F.S) / (l.S.F - l.F.F);
   }
   void insert(int idx) {
     its[idx] = sweep.insert(idx);
     if (its[idx] != sweep.begin()) 
       update_event(*prev(its[idx]));
     update_event(idx);
-    event.emplace(base[idx].Y.X, idx + 2 * (int)base.size());
+    event.emplace(base[idx].S.F, idx + 2 * (int)base.size());
   }
   void erase(int idx) {
     assert(eits[idx] == event.end());
@@ -46,8 +47,8 @@ struct SweepLine {
     eits[idx] = event.end();
     auto nxt = next(its[idx]);
     if (nxt == sweep.end() || !slope_cmp(idx, *nxt)) return;
-    auto t = intersect(base[idx].X, base[idx].Y, base[*nxt].X, base[*nxt].Y).X;
-    if (t + eps < curTime || t >= min(base[idx].Y.X, base[*nxt].Y.X)) return;
+    auto t = intersect(base[idx].F, base[idx].S, base[*nxt].F, base[*nxt].S).F;
+    if (t + eps < curTime || t >= min(base[idx].S.F, base[*nxt].S.F)) return;
     eits[idx] = event.emplace(t, idx + (int)base.size());
   }
   void swp(int idx) {
@@ -65,15 +66,15 @@ struct SweepLine {
     for (int i = 0; i < (int)base.size(); ++i) {
       auto &[p, q] = base[i];
       if (p > q) swap(p, q);
-      if (p.X <= curTime && curTime <= q.X)
+      if (p.F <= curTime && curTime <= q.F)
         insert(i);
-      else if (curTime < p.X)
-        event.emplace(p.X, i);
+      else if (curTime < p.F)
+        event.emplace(p.F, i);
     }
   }
   void setTime(T t, bool ers = false) {
     assert(t >= curTime);
-    while (!event.empty() && event.begin()->X <= t) {
+    while (!event.empty() && event.begin()->F <= t) {
       auto [et, idx] = *event.begin();
       int s = idx / (int)base.size();
       idx %= (int)base.size();
@@ -88,7 +89,7 @@ struct SweepLine {
   }
   T nextEvent() {
     if (event.empty()) return INF;
-    return event.begin()->X;
+    return event.begin()->F;
   }
   int lower_bound(T y) {
     curQ = y;

@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 double rat(pll a, pll b) {
   return sign(b.F) ? (double)a.F / b.F : (double)a.S / b.S;
 } // all poly. should be ccw

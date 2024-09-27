@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 /*
 Mo's Algorithm On Tree
 Preprocess: 

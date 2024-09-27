@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct SAT { // 0-base
   int low[N], dfn[N], bln[N], n, Time, nScc;
   bool instack[N], istrue[N];

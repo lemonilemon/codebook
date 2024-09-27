@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 // Berlekamp-Rabin, log^2(p)
 ll trial(ll y, ll z, ll m) {
   ll a0 = 1, a1 = 0, b0 = z, b1 = 1, p = (m - 1) / 2;

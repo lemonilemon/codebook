@@ -1,15 +1,13 @@
-#include "common.h"
-#define sumS 500005
+#include "include/common.h"
 #define sigma 26
 #define base 'a'
-struct AhoCorasick {
-  int ch[sumS][sigma] = {{}}, f[sumS] = {-1},
-      tag[sumS], mv[sumS][sigma], jump[sumS],
-      cnt[sumS];
+struct AhoCorasick { // N: sum of length
+  int ch[N][sigma] = {{}}, f[N] = {-1}, tag[N],
+      mv[N][sigma], jump[N], cnt[N];
   int idx = 0, t = -1;
-  vector<int> E[sumS], q;
-  pii o[sumS];
-  int insert(string &s, int t) {
+  vector<int> E[N], q;
+  pii o[N];
+  int insert(string &s) {
     int j = 0;
     for (int i = 0; i < (int)s.size(); i++) {
       if (!ch[j][s[i] - base])
@@ -30,7 +28,7 @@ struct AhoCorasick {
   void build() {
     int k = -1;
     q.emplace_back(0);
-    while (++k < q.size()) {
+    while (++k < (int)q.size()) {
       int u = q[k];
       for (int v = 0; v < sigma; v++) {
         if (ch[u][v]) {
@@ -51,7 +49,6 @@ struct AhoCorasick {
     fill(cnt, cnt + idx + 1, 0);
     for (int i = 0, j = 0; i < (int)s.size(); i++)
       cnt[j = next(j, s[i] - base)]++;
-
     for (int i : q)
       if (f[i] > 0) cnt[f[i]] += cnt[i];
   }

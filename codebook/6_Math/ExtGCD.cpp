@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 // beware of negative numbers!
 void extgcd(ll a, ll b, ll c, ll &x, ll &y) {
   if (b == 0) x = c / a, y = 0;

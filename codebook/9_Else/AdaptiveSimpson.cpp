@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 template<typename Func, typename d = double>
 struct Simpson {
   using pdd = pair<d, d>;

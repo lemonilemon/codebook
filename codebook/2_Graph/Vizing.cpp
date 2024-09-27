@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 namespace Vizing { // Edge coloring
                    // G: coloring adjM
 int C[N][N], G[N][N];
@@ -7,7 +7,7 @@ void clear(int n) {
     for (int j = 0; j <= n; j++) C[i][j] = G[i][j] = 0;
   }
 }
-void solve(vector<pii> &E, int n, int m) {
+void solve(vector<pii> &E, int n) {
   int X[n] = {}, a;
   auto update = [&](int u) {
     for (X[u] = 1; C[u][X[u]]; X[u]++);
@@ -31,7 +31,7 @@ void solve(vector<pii> &E, int n, int m) {
     return p;
   };
   for (int i = 1; i <= n; i++) X[i] = 1;
-  for (int t = 0; t < E.size(); t++) {
+  for (int t = 0; t < (int)E.size(); t++) {
     int u = E[t].first, v0 = E[t].second, v = v0,
         c0 = X[u], c = c0, d;
     vector<pii> L;

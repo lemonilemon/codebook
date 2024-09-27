@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 struct MaxClique { // fast when N <= 100
   bitset<N> G[N], cs[N];
   int ans, sol[N], q, cur[N], d[N], n;

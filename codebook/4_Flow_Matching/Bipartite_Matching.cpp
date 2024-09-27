@@ -1,6 +1,5 @@
-#include "common.h"
-
-struct Bipartite_Matching { // 0-base
+#include "include/common.h"
+struct BipartiteMatching { // 0-base
   int l, r;
   int mp[N], mq[N];
   int dis[N], cur[N];
