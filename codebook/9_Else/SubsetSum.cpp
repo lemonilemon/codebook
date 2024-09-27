@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 template<size_t S> // sum(a) < S
 bitset<S> SubsetSum(const int *a, int n) {
     vector<int> c(S);

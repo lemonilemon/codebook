@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 vector<pdd> cut(vector<pdd> poly, pdd s, pdd e) {
   vector<pdd> res;
   for (int i = 0; i < (int)poly.size(); ++i) {

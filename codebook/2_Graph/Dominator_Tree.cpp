@@ -1,5 +1,5 @@
-#include "common.h"
-struct dominator_tree { // 1-base
+#include "include/common.h"
+struct DominatorTree { // 1-base
   vector<int> G[N], rG[N];
   int n, pa[N], dfn[N], id[N], Time;
   int semi[N], idom[N], best[N];

@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 int low[N], dfn[N], Time; // 1-base
 vector<pii> G[N], edge;
 vector<bool> is_bridge;

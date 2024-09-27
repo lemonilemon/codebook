@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 bool PointInConvex(const vector<pll> &C, pll p, bool strict = true) {
   int a = 1, b = (int)C.size() - 1, r = !strict;
   if ((int)C.size() == 0) return false;

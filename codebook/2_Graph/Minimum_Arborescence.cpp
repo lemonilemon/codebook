@@ -1,5 +1,5 @@
-#include "common.h"
-struct zhu_liu { // O(VE)
+#include "include/common.h"
+struct DMST { // O(VE)
   struct edge {
     int u, v;
     ll w;
@@ -15,7 +15,7 @@ struct zhu_liu { // O(VE)
     ll ans = 0;
     for (;;) {
       fill_n(in, n, INF);
-      for (int i = 0; i < E.size(); ++i)
+      for (int i = 0; i < (int)E.size(); ++i)
         if (E[i].u != E[i].v && E[i].w < in[E[i].v])
           pe[E[i].v] = i, in[E[i].v] = E[i].w;
       for (int u = 0; u < n; ++u) // no solution
@@ -37,7 +37,7 @@ struct zhu_liu { // O(VE)
       if (!cntnode) break; // no cycle
       for (int u = 0; u < n; ++u)
         if (!~id[u]) id[u] = cntnode++;
-      for (int i = 0; i < E.size(); ++i) {
+      for (int i = 0; i < (int)E.size(); ++i) {
         int v = E[i].v;
         E[i].u = id[E[i].u], E[i].v = id[E[i].v];
         if (E[i].u != E[i].v) E[i].w -= in[v];

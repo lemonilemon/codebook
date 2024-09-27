@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 ll PrimeCount(ll n) { // n ~ 10^13 => < 2s
   if (n <= 1) return 0;
   int v = sqrt(n), s = (v + 1) / 2, pc = 0;

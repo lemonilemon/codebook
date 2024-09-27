@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 int n, m, dfn[N], low[N], is_cut[N], nbcc = 0, t = 0;
 vector<int> g[N], bcc[N], G[2 * N];
 stack<int> st;

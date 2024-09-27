@@ -1,15 +1,14 @@
-#include "common.h"
+#include "include/common.h"
 #define ls(x) Tree[x].son[0]
 #define rs(x) Tree[x].son[1]
 #define fa(x) Tree[x].fa
-const int maxn = 600010;
 struct node {
   int son[2], Min, id, fa, lazy;
-} Tree[maxn];
-int n, m, q, w[maxn], Min;
+} Tree[N];
+int n, m, q, w[N], Min;
 struct Node {
   int u, v, w;
-} a[maxn];
+} a[N];
 inline bool IsRoot(int x) {
   return (ls(fa(x)) == x || rs(fa(x)) == x) ? false
                                             : true;

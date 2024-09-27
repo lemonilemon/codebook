@@ -1,6 +1,5 @@
-#include "common.h"
+#include "include/common.h"
 #define rep(i, a, b) for (int i = a; i < (b); ++i)
-#define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 typedef vector<int> vi;
 struct RollbackUF {
@@ -30,7 +29,7 @@ struct Edge {
   int a, b;
   ll w;
 };
-struct Node { /// lazy skew heap node
+struct Node { // lazy skew heap node
   Edge key;
   Node *l, *r;
   ll delta;
@@ -87,11 +86,11 @@ pair<ll, vi> dmst(int n, int r, vector<Edge> &g) {
     rep(i, 0, qi) in[uf.find(Q[i].b)] = Q[i];
   }
 
-  for (auto &[u, t, comp] :
-    cycs) { // restore sol (optional)
+  for (auto &[u, t, cmp] : cycs) {
+    // restore sol (optional)
     uf.rollback(t);
     Edge inEdge = in[u];
-    for (auto &e : comp) in[uf.find(e.b)] = e;
+    for (auto &e : cmp) in[uf.find(e.b)] = e;
     in[uf.find(inEdge.b)] = inEdge;
   }
   rep(i, 0, n) par[i] = in[i].a;

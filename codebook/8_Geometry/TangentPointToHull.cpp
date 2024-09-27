@@ -1,4 +1,4 @@
-#include "Default_code.cpp"
+#include "GeometryDefaultFloat.h"
 /* The point should be strictly out of hull
   return arbitrary point on the tangent line */
 /* bool pred(int a, int b);

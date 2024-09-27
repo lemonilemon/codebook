@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 const double eps = 1e-12, pi = acos(-1);
 struct point {
   ld x, y, z;

@@ -1,7 +1,5 @@
-#include "common.h"
-// 9223372036737335297, 3
+#include "include/common.h"
 #define base ll // complex<double>
-#define N 524288
 // const double PI = acosl(-1);
 const ll mod = 998244353, g = 3;
 base omega[4 * N], omega_[4 * N];
@@ -36,7 +34,7 @@ void calcrev(int n) {
 
 vector<base> NTT(vector<base> poly, bool inv) {
   base *w = (inv ? omega_ : omega);
-  int n = poly.size();
+  int n = (int)poly.size();
   for (int i = 0; i < n; i++)
     if (rev[i] > i) swap(poly[i], poly[rev[i]]);
 

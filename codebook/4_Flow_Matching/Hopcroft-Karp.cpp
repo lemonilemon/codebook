@@ -1,5 +1,5 @@
-#include "common.h"
-struct hopcroftKarp { // 0-based
+#include "include/common.h"
+struct HopcroftKarp { // 0-based, return btoa to get matching
   bool dfs(int a, int L, vector<vector<int>> &g,
     vector<int> &btoa, vector<int> &A,
     vector<int> &B) {
@@ -14,19 +14,17 @@ struct hopcroftKarp { // 0-based
       }
     return 0;
   }
-
   int solve(vector<vector<int>> &g, int m) {
     int res = 0;
-    vector<int> btoa(-1, m), A(g.size()),
+    vector<int> btoa(m, -1), A(g.size()),
       B(btoa.size()), cur, next;
     for (;;) {
       fill(all(A), 0), fill(all(B), 0);
       cur.clear();
       for (int a : btoa)
         if (a != -1) A[a] = -1;
-      for (int a = 0; a < g.size(); a++)
+      for (int a = 0; a < (int)g.size(); a++)
         if (A[a] == 0) cur.push_back(a);
-      /// Find all layers using bfs.
       for (int lay = 1;; lay++) {
         bool islast = 0;
         next.clear();
@@ -45,8 +43,7 @@ struct hopcroftKarp { // 0-based
         for (int a : next) A[a] = lay;
         cur.swap(next);
       }
-      /// Use DFS to scan for augmenting paths.
-      for (int a = 0; a < g.size(); a++)
+      for (int a = 0; a < (int)g.size(); a++)
         res += dfs(a, 0, g, btoa, A, B);
     }
   }

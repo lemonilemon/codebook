@@ -3,12 +3,10 @@
 poly inv(poly A) {
   A.resize(1 << (__lg(A.size() - 1) + 1));
   poly B = {inverse(A[0])};
-  for (int n = 1; n < A.size(); n += n) {
+  for (int n = 1; n < (int)A.size(); n <<= 1) {
     poly pA(A.begin(), A.begin() + 2 * n);
-    calcrev(4 * n);
-    calcW(4 * n);
-    pA.resize(4 * n);
-    B.resize(4 * n);
+    calcrev(4 * n), calcW(4 * n);
+    pA.resize(4 * n), B.resize(4 * n);
     pA = NTT(pA, 0);
     B = NTT(B, 0);
     for (int i = 0; i < 4 * n; i++)
@@ -21,35 +19,32 @@ poly inv(poly A) {
   }
   return B;
 }
-
 pair<poly, poly> div(poly A, poly B) {
   if (A.size() < B.size()) return make_pair(poly(), A);
   int n = A.size(), m = B.size();
   poly revA = A, invrevB = B;
-  reverse(revA.begin(), revA.end());
-  reverse(invrevB.begin(), invrevB.end());
+  reverse(all(revA)), reverse(all(invrevB));
   revA.resize(n - m + 1);
   invrevB.resize(n - m + 1);
   invrevB = inv(invrevB);
-
   poly Q = mul(revA, invrevB);
   Q.resize(n - m + 1);
-  reverse(Q.begin(), Q.end());
+  reverse(all(Q));
   poly R = mul(Q, B);
   R.resize(m - 1);
   for (int i = 0; i < m - 1; i++)
     R[i] = (A[i] - R[i] + mod) % mod;
   return make_pair(Q, R);
 }
-
+poly modulo(poly A, poly B) { return div(A, B).S; }
 ll fast_kitamasa(ll k, poly A, poly C) {
   int n = A.size();
   C.emplace_back(mod - 1);
   poly Q, R = {0, 1}, F = {1};
-  R = div(R, C);
-  while (k) {
-    if (k & 1) F = div(mul(F, R), C);
-    R = div(mul(R, R), C);
+  R = modulo(R, C);
+  for (; k; k >>= 1) {
+    if (k & 1) F = modulo(mul(F, R), C);
+    R = modulo(mul(R, R), C);
     k >>= 1;
   }
   ll ans = 0;
@@ -57,7 +52,6 @@ ll fast_kitamasa(ll k, poly A, poly C) {
     ans = (ans + A[i] * F[i]) % mod;
   return ans;
 }
-
 vector<ll> fpow(vector<ll> f, ll p, ll m) {
   int b = 0;
   while (b < f.size() && f[b] == 0) b++;

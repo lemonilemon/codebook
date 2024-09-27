@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 const int MAXN = 11000, MAXM = 405;
 const double eps = 1E-10;
 double a[MAXN][MAXM], b[MAXN], c[MAXM];

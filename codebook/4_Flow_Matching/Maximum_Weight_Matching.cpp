@@ -1,6 +1,6 @@
-#include "common.h"
+#include "include/common.h"
 #define rep(i, l, r) for (int i = (l); i <= (r); ++i)
-struct WeightGraph { // 1-based
+struct WeightGraph { // 1-based, note int!
   struct edge {
     int u, v, w;
   };
@@ -40,9 +40,9 @@ struct WeightGraph { // 1-based
       for (int y : flo[x]) set_st(y, b);
   }
   vector<int> split_flo(auto &f, int xr) {
-    auto it = find(ALL(f), xr);
+    auto it = find(all(f), xr);
     if (auto pr = it - f.begin(); pr % 2 == 1)
-      reverse(1 + ALL(f)), it = f.end() - pr;
+      reverse(1 + all(f)), it = f.end() - pr;
     auto res = vector(f.begin(), it);
     return f.erase(f.begin(), it), res;
   }

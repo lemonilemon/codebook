@@ -1,4 +1,4 @@
-#include "common.h"
+#include "include/common.h"
 template <typename T>
 vector<T> BerlekampMassey(const vector<T> &output) {
   vector<T> d(output.size() + 1), me, he;
@@ -16,7 +16,7 @@ vector<T> BerlekampMassey(const vector<T> &output) {
     for (T x : he) o.emplace_back(x * k);
     o.resize(max(o.size(), me.size()));
     for (int j = 0; j < me.size(); ++j) o[j] += me[j];
-    if (i - f + (int)he.size()) >= (int)me.size()) he = me, f = i;
+    if (i - f + (int)he.size() >= (int)me.size()) he = me, f = i;
     me = o;
   }
   return me;
