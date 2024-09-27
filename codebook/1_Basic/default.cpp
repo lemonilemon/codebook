@@ -16,7 +16,7 @@ using namespace std;
 template<class I> void LKJ(I&&x){ cerr << x << '\n'; }
 template<class I, class...T> void LKJ(I&&x, T&&...t){ cerr << x << ' ', LKJ(t...); }
 template<class I> void OI(I a, I b){ while(a < b) cerr << *a << " \n"[next(a) == b], ++a; }
-#define pv(v) cerr << "\033[1;31m" << #v << ": \033[0m"; OI(all(v))
+#define pv(v) cerr << "\033[1;31m[" << #v << "]: \033[0m"; OI(all(v))
 #else
 #define px(...) 
 #define OI(...) 
