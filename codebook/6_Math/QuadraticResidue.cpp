@@ -16,7 +16,8 @@ ll trial(ll y, ll z, ll m) {
   return -1;
 }
 mt19937 rd(49);
-ll psqrt(ll y, ll p) {
+ll psqrt(ll y, ll p) { // sqrt(y) mod p
+  if (y == 0) return 0;
   if (fpow(y, (p - 1) / 2, p) != 1) return -1;
   for (int i = 0; i < 30; i++) {
     ll z = rd() % p;
