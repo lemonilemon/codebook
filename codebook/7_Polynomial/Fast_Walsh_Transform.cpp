@@ -2,16 +2,18 @@
 /* x: a[j], y: a[j + (L >> 1)]
 or: (y += x * op), and: (x += y * op)
 xor: (x, y = (x + y) * op, (x - y) * op)
-invop: or, and, xor = -1, -1, 1/2 */
-void fwt(int *a, int n, int op) { //or
+op: 1, invop: or, and, xor = -1, -1, 1/2 */
+void fwt(int *a, int n, int op) { // or
   for (int L = 2; L <= n; L <<= 1)
     for (int i = 0; i < n; i += L)
       for (int j = i; j < i + (L >> 1); ++j)
         a[j + (L >> 1)] += a[j] * op;
 }
 const int P = 21; // power of max N
-int f[P][1 << P], g[P][1 << P], h[P][1 << P], ct[1 << P];
-void subset_convolution(int *a, int *b, int *c, int L) {
+int f[P][1 << P], g[P][1 << P], h[P][1 << P],
+  ct[1 << P];
+void subset_convolution(
+  int *a, int *b, int *c, int L) {
   // c_k = \sum_{i | j = k, i & j = 0} a_i * b_j
   int n = 1 << L;
   for (int i = 1; i < n; ++i)
@@ -24,8 +26,6 @@ void subset_convolution(int *a, int *b, int *c, int L) {
     for (int j = 0; j <= i; ++j)
       for (int x = 0; x < n; ++x)
         h[i][x] += f[j][x] * g[i - j][x];
-  for (int i = 0; i <= L; ++i)
-    fwt(h[i], n, -1);
-  for (int i = 0; i < n; ++i)
-    c[i] = h[ct[i]][i];
+  for (int i = 0; i <= L; ++i) fwt(h[i], n, -1);
+  for (int i = 0; i < n; ++i) c[i] = h[ct[i]][i];
 }
