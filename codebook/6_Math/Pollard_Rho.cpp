@@ -1,11 +1,12 @@
 #include "include/common.h"
 map<ll, int> cnt;
-void PollardRho(ll n) {
+void PollardRho(ll n) { // O(n^(1/4))
   if (n == 1) return;
-  if (prime(n)) return ++cnt[n], void();        
-  if (n % 2 == 0) return PollardRho(n / 2), ++cnt[2], void();
+  if (prime(n)) return ++cnt[n], void();
+  if (n % 2 == 0)
+    return PollardRho(n / 2), ++cnt[2], void();
   ll x = 2, y = 2, d = 1, p = 1;
-  #define f(x, n, p) ((mul(x, x, n) + p) % n)
+#define f(x, n, p) ((mul(x, x, n) + p) % n)
   while (true) {
     if (d != n && d != 1) {
       PollardRho(n / d);

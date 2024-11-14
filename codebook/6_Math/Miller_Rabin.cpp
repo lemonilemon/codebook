@@ -7,7 +7,7 @@
 ll mul(ll a, ll b, ll mod) {
   return (ll)(__int128(a) * b % mod);
 }
-bool Miller_Rabin(ll a, ll n) {
+bool Miller_Rabin(ll a, ll n) { // O(log(n)^3)
   if ((a = a % n) == 0) return 1;
   if (n % 2 == 0) return n == 2;
   ll tmp = (n - 1) / ((n - 1) & (1 - n));
