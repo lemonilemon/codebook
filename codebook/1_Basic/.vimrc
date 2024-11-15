@@ -1,5 +1,5 @@
 sy on
-set ru nu cin cul sc so=3 ts=4 sw=4 bs=2 ls=2 mouse=a
+set si ru nu cin cul sc et so=3 ts=4 sw=4 bs=2 ls=2 mouse=a
 ino {<CR> {<CR>}<C-o>O
 ino jj <esc>
 ino jk <esc> 
